@@ -1013,9 +1013,10 @@
                     
                     // Skills
                     html += '<div class="cs-section"><h3>Skills</h3><div class="cs-skills">';
-                    ['AGILITY', 'ARCHERY', 'CUNNING', 'FOLKLORE', 'LUCK', 'MAGIC', 'ROGUERY', 'SEAFARING', 'STREETWISE', 'SWORDPLAY', 'WILDERNESS_LORE', 'WRESTLING'].forEach(skill => {
+                    const skills = ['AGILITY', 'ARCHERY', 'CUNNING', 'FOLKLORE', 'LUCK', 'MAGIC', 'ROGUERY', 'SEAFARING', 'STREETWISE', 'SWORDPLAY', 'WILDERNESS_LORE', 'WRESTLING'];
+                    skills.forEach(skill => {
                         if (this.state[skill] > 0) {
-                            const displayName = skill.replace('_', ' ');
+                            const displayName = skill.replace(/_/g, ' ');
                             html += `<span class="cs-skill-badge">${displayName}</span>`;
                         }
                     });
