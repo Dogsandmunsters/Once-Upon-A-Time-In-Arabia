@@ -843,7 +843,17 @@
             
             applyStateChanges(changes) {
                 changes.forEach(change => {
-                    const varName = change.var;
+                    let varName = change.var;
+                    
+                    // Convert skill names to uppercase to match state variables
+                    const skillNames = ['agility', 'archery', 'cunning', 'folklore', 'luck', 'magic', 
+                                       'roguery', 'seafaring', 'streetwise', 'swordplay', 'wilderness_lore', 'wrestling'];
+                    const isSkill = skillNames.includes(varName.toLowerCase());
+                    if (isSkill) {
+                        varName = varName.toUpperCase();
+                    }
+                    
+                    const oldValue = this.state[varName] || 0;
                     
                     if (change.op === 'set') {
                         this.state[varName] = change.value;
@@ -856,6 +866,11 @@
                         } else if (varName === 'life_points' && change.value < 0) {
                             this.playSound('damage');
                         }
+                    }
+                    
+                    // Update skill count when skills change
+                    if (isSkill && oldValue === 0 && this.state[varName] > 0) {
+                        this.state.skill_count = (this.state.skill_count || 0) + 1;
                     }
                     
                     // Clamp life points
@@ -933,7 +948,16 @@
             }
             
             checkCondition(condition) {
-                const value = this.state[condition.var];
+                let varName = condition.var;
+                
+                // Convert skill names to uppercase to match state variables
+                const skillNames = ['agility', 'archery', 'cunning', 'folklore', 'luck', 'magic', 
+                                   'roguery', 'seafaring', 'streetwise', 'swordplay', 'wilderness_lore', 'wrestling'];
+                if (skillNames.includes(varName.toLowerCase())) {
+                    varName = varName.toUpperCase();
+                }
+                
+                const value = this.state[varName];
                 
                 switch (condition.op) {
                     case '==': return value == condition.value;
