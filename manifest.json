@@ -1,0 +1,26 @@
+{
+  "name": "Once Upon A Time In Arabia",
+  "short_name": "Arabia",
+  "description": "An interactive gamebook adventure set in the world of Arabian Nights. Choose your character, make choices, and seek your fortune across Baghdad, Cairo, and beyond.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#1a0f2e",
+  "theme_color": "#d4af37",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "./images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["games", "entertainment", "books"],
+  "screenshots": []
+}

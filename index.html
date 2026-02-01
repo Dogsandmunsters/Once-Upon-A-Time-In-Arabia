@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#d4af37">
+    <title>Once Upon A Time In Arabia</title>
+    <link rel="manifest" href="./manifest.json">
+    <link rel="icon" type="image/png" sizes="192x192" href="./images/icon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="./images/icon-512.png">
+    <link rel="apple-touch-icon" href="./images/icon-512.png">
+    
+    <style>
+        /* ===== ROOT VARIABLES ===== */
+        :root {
+            --color-bg-dark: #1a0f2e;
+            --color-bg-medium: #2d1b4e;
+            --color-bg-light: #3d2858;
+            --color-gold: #d4af37;
+            --color-gold-dark: #b8941f;
+            --color-gold-light: #f4d469;
+            --color-purple: #8b4789;
+            --color-text: #f5ebe0;
+            --color-text-dim: #c4b5a0;
+            --color-danger: #e63946;
+            --color-success: #06d6a0;
+            
+            --font-display: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+            --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+        
+        /* ===== GLOBAL RESET ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--color-text);
+            background: linear-gradient(135deg, var(--color-bg-dark) 0%, var(--color-bg-medium) 100%);
+            position: relative;
+        }
+        
+        /* ===== DECORATIVE BACKGROUND PATTERN ===== */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(212, 175, 55, 0.03) 35px, rgba(212, 175, 55, 0.03) 70px);
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        /* ===== MAIN CONTAINER ===== */
+        #app {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            z-index: 1;
+        }
+        
+        /* ===== HEADER BAR ===== */
+        #header {
+            background: linear-gradient(180deg, var(--color-bg-dark) 0%, var(--color-bg-medium) 100%);
+            border-bottom: 2px solid var(--color-gold);
+            padding: 12px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
+        
+        #header-left {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        .stat {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .stat-icon {
+            font-size: 20px;
+        }
+        
+        .stat-value {
+            color: var(--color-gold-light);
+            min-width: 30px;
+        }
+        
+        #header-title {
+            font-family: var(--font-display);
+            font-size: 16px;
+            font-weight: bold;
+            color: var(--color-gold);
+            text-align: center;
+            letter-spacing: 0.5px;
+        }
+        
+        #header-right {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .header-btn {
+            background: var(--color-gold);
+            color: var(--color-bg-dark);
+            border: none;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .header-btn:hover {
+            background: var(--color-gold-light);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        }
+        
+        .header-btn:active {
+            transform: translateY(0);
+        }
+        
+        /* ===== MAIN CONTENT AREA ===== */
+        #main {
+            flex: 1;
+            overflow-y: auto;
+            padding: 24px 16px;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        #content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* ===== START SCREEN ===== */
+        #start-screen {
+            text-align: center;
+            padding: 40px 20px;
+        }
+        
+        #start-screen img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+        }
+        
+        #start-screen h1 {
+            font-family: var(--font-display);
+            font-size: 32px;
+            color: var(--color-gold);
+            margin-bottom: 8px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+        
+        #start-screen .author {
+            font-size: 18px;
+            color: var(--color-text-dim);
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+        
+        .start-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+        
+        .start-btn {
+            background: var(--color-gold);
+            color: var(--color-bg-dark);
+            border: none;
+            padding: 16px 32px;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+        
+        .start-btn:hover:not(:disabled) {
+            background: var(--color-gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+        }
+        
+        .start-btn:disabled {
+            background: var(--color-bg-light);
+            color: var(--color-text-dim);
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
+        
+        /* ===== SECTION CONTENT ===== */
+        #section-text {
+            background: rgba(29, 17, 46, 0.6);
+            border: 1px solid var(--color-purple);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+            line-height: 1.6;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+        
+        #section-text img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 16px auto;
+            border-radius: 8px;
+        }
+        
+        #section-text p {
+            margin-bottom: 1.5em !important;
+        }
+        
+        #section-text p:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* Centered titles */
+        .section-title {
+            text-align: center;
+            font-weight: bold;
+            font-size: 18px;
+            color: var(--color-gold);
+            margin: 20px 0;
+        }
+        
+        /* ===== OPTIONS ===== */
+        #options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .option-btn {
+            background: var(--color-bg-medium);
+            border: 2px solid var(--color-gold);
+            color: var(--color-text);
+            padding: 16px 20px;
+            text-align: left;
+            font-size: 16px;
+            line-height: 1.4;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .option-btn::before {
+            content: '▸';
+            position: absolute;
+            left: -20px;
+            color: var(--color-gold);
+            font-size: 18px;
+            transition: left 0.2s;
+        }
+        
+        .option-btn:hover {
+            background: var(--color-bg-light);
+            border-color: var(--color-gold-light);
+            transform: translateX(4px);
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+        }
+        
+        .option-btn:hover::before {
+            left: 12px;
+        }
+        
+        .shop-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .shop-item-text {
+            flex: 1;
+        }
+        
+        .shop-item-status {
+            font-size: 14px;
+            color: var(--color-text-dim);
+            font-style: italic;
+        }
+        
+        /* ===== MODALS ===== */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 1000;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .modal-content {
+            background: linear-gradient(135deg, var(--color-bg-dark) 0%, var(--color-bg-medium) 100%);
+            border: 3px solid var(--color-gold);
+            border-radius: 16px;
+            padding: 32px;
+            max-width: 600px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+            position: relative;
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid var(--color-purple);
+        }
+        
+        .modal-header h2 {
+            font-family: var(--font-display);
+            color: var(--color-gold);
+            font-size: 24px;
+        }
+        
+        .modal-close {
+            background: transparent;
+            border: none;
+            color: var(--color-gold);
+            font-size: 32px;
+            cursor: pointer;
+            padding: 0;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.2s;
+        }
+        
+        .modal-close:hover {
+            color: var(--color-gold-light);
+        }
+        
+        .modal-body {
+            color: var(--color-text);
+            line-height: 1.6;
+        }
+        
+        /* ===== CHARACTER SHEET ===== */
+        .cs-section {
+            margin-bottom: 24px;
+        }
+        
+        .cs-section h3 {
+            color: var(--color-gold);
+            font-size: 18px;
+            margin-bottom: 12px;
+            font-family: var(--font-display);
+        }
+        
+        .cs-skills, .cs-possessions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .cs-skill-badge, .cs-item-badge {
+            background: var(--color-purple);
+            color: var(--color-text);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .cs-item-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .eat-btn {
+            background: var(--color-success);
+            color: white;
+            border: none;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .eat-btn:hover {
+            background: #05b886;
+            transform: scale(1.05);
+        }
+        
+        .cs-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 16px;
+        }
+        
+        .cs-stat {
+            background: rgba(139, 71, 137, 0.2);
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid var(--color-purple);
+        }
+        
+        .cs-stat-label {
+            font-size: 14px;
+            color: var(--color-text-dim);
+            margin-bottom: 4px;
+        }
+        
+        .cs-stat-value {
+            font-size: 24px;
+            color: var(--color-gold-light);
+            font-weight: 600;
+        }
+        
+        /* ===== MAP ===== */
+        #map-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
+        
+        /* ===== COPYRIGHT ===== */
+        #copyright-text {
+            font-size: 14px;
+            line-height: 1.8;
+        }
+        
+        #copyright-text p {
+            margin-bottom: 16px;
+        }
+        
+        #copyright-text strong {
+            color: var(--color-gold);
+        }
+        
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 600px) {
+            #header {
+                padding: 10px 12px;
+            }
+            
+            #header-left {
+                font-size: 16px;
+                gap: 12px;
+            }
+            
+            #header-title {
+                font-size: 13px;
+            }
+            
+            .header-btn {
+                padding: 6px 10px;
+                font-size: 12px;
+            }
+            
+            #main {
+                padding: 16px 12px;
+            }
+            
+            #start-screen h1 {
+                font-size: 26px;
+            }
+            
+            .modal-content {
+                padding: 24px;
+            }
+        }
+        
+        /* ===== UTILITIES ===== */
+        .hidden {
+            display: none !important;
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.3s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <!-- Header Bar -->
+        <div id="header" class="hidden">
+            <div id="header-left">
+                <div class="stat">
+                    <span class="stat-icon">💰</span>
+                    <span class="stat-value" id="stat-money">12</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-icon">❤️</span>
+                    <span class="stat-value" id="stat-life">10</span>
+                </div>
+            </div>
+            <div id="header-title">ONCE UPON A TIME IN ARABIA</div>
+            <div id="header-right">
+                <button class="header-btn" id="btn-character">Character</button>
+                <button class="header-btn" id="btn-map">Map</button>
+                <button class="header-btn" id="btn-reset">Reset</button>
+                <button class="header-btn" id="btn-sound">🔊</button>
+            </div>
+        </div>
+        
+        <!-- Main Content Area -->
+        <div id="main">
+            <div id="content">
+                <!-- Start Screen -->
+                <div id="start-screen">
+                    <img src="./images/filler_city.jpg" alt="Arabian Nights cityscape">
+                    <h1>ONCE UPON A TIME IN ARABIA</h1>
+                    <p class="author">by Dave Morris</p>
+                    <div class="start-buttons">
+                        <button class="start-btn" id="btn-new-game">Start New Game</button>
+                        <button class="start-btn" id="btn-resume" disabled>Resume Game</button>
+                    </div>
+                </div>
+                
+                <!-- Game Content (initially hidden) -->
+                <div id="game-content" class="hidden">
+                    <div id="section-text"></div>
+                    <div id="options"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Character Sheet Modal -->
+    <div id="modal-character" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Character Sheet</h2>
+                <button class="modal-close" aria-label="Close">&times;</button>
+            </div>
+            <div class="modal-body" id="character-sheet">
+                <!-- Populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- Map Modal -->
+    <div id="modal-map" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Map</h2>
+                <button class="modal-close" aria-label="Close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <img id="map-image" src="./images/map1.jpg" alt="Map of Arabia">
+            </div>
+        </div>
+    </div>
+    
+    <!-- Copyright Modal -->
+    <div id="modal-copyright" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Copyright & Credits</h2>
+                <button class="modal-close" aria-label="Close">&times;</button>
+            </div>
+            <div class="modal-body" id="copyright-text">
+                <p><strong>Book Credits:</strong></p>
+                <p>Text copyright © 1994, 2013, 2026 Dave Morris</p>
+                <p>Dedicated to Eric Goldberg</p>
+                <p>Published 2026 by Spark Furnace, an imprint of Fabled Lands Publishing</p>
+                <p>Maps by Leo Hartas<br>Interior Art by Russ Nicholson</p>
+                <p><strong>PWA Credits:</strong></p>
+                <p>App designed and developed by Dave Morris and Claude</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load section data -->
+    <script src="./sections_data.js"></script>
+    
+    <script>
+        
+        // ===== GAME STATE =====
+        class GameState {
+            constructor() {
+                this.loadState();
+            }
+            
+            loadState() {
+                const saved = localStorage.getItem('arabia_save');
+                if (saved) {
+                    const data = JSON.parse(saved);
+                    Object.assign(this, data);
+                } else {
+                    this.resetState();
+                }
+            }
+            
+            resetState() {
+                // Core stats
+                this.money = 12;
+                this.life_points = 10;
+                this.life_points_max = 10;
+                
+                // Skills
+                this.AGILITY = 0;
+                this.ARCHERY = 0;
+                this.CUNNING = 0;
+                this.FOLKLORE = 0;
+                this.LUCK = 0;
+                this.MAGIC = 0;
+                this.ROGUERY = 0;
+                this.SEAFARING = 0;
+                this.STREETWISE = 0;
+                this.SWORDPLAY = 0;
+                this.WILDERNESS_LORE = 0;
+                this.WRESTLING = 0;
+                
+                // Possessions
+                this.antidote = 0;
+                this.black_jewel = 0;
+                this.bow = 0;
+                this.chart = 0;
+                this.cloak = 0;
+                this.diamond = 0;
+                this.golden_apple = 0;
+                this.harem_costume = 0;
+                this.hawk = 0;
+                this.indian_rope = 0;
+                this.jasmine_flower = 0;
+                this.jericho_horn = 0;
+                this.jewelled_key = 0;
+                this.jewelled_sword = 0;
+                this.lamp_of_antar = 0;
+                this.long_tailed_cat = 0;
+                this.magic_slippers = 0;
+                this.mirror = 0;
+                this.prayer_mat = 0;
+                this.ring = 0;
+                this.sword = 0;
+                this.water_bottle = 0;
+                
+                // Codewords (not displayed)
+                this.s355 = 0;
+                this.s377 = 0;
+                this.s495 = 0;
+                this.conch = 0;
+                this.fabric = 0;
+                this.gemini = 0;
+                this.hajji = 0;
+                this.harem = 0;
+                this.iris = 0;
+                this.kismet = 0;
+                this.mordant = 0;
+                this.noose = 0;
+                this.sesame = 0;
+                this.truce = 0;
+                this.zebra = 0;
+                
+                // Navigation
+                this.current_section = '1';
+                this.char_chosen = 0;
+                this.skill_count = 0;
+                
+                // Shop tracking (per-shop, per-item)
+                this.shopPurchases = {};
+            }
+            
+            save() {
+                localStorage.setItem('arabia_save', JSON.stringify(this));
+            }
+            
+            hasSave() {
+                return localStorage.getItem('arabia_save') !== null;
+            }
+        }
+        
+        // ===== GAME ENGINE =====
+        class GameEngine {
+            constructor() {
+                this.state = new GameState();
+                this.soundEnabled = localStorage.getItem('arabia_sound') !== 'false';
+                this.sounds = {
+                    click: new Audio('./sounds/click.wav'),
+                    money: new Audio('./sounds/money.wav'),
+                    damage: new Audio('./sounds/damage.mp3'),
+                    map: new Audio('./sounds/map.wav')
+                };
+                this.initUI();
+                this.checkForSave();
+            }
+            
+            initUI() {
+                // Modal close buttons
+                document.querySelectorAll('.modal-close').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        e.target.closest('.modal').classList.remove('active');
+                    });
+                });
+                
+                // Header buttons
+                document.getElementById('btn-character').addEventListener('click', () => this.showCharacterSheet());
+                document.getElementById('btn-map').addEventListener('click', () => this.showMap());
+                document.getElementById('btn-reset').addEventListener('click', () => this.confirmReset());
+                document.getElementById('btn-sound').addEventListener('click', () => this.toggleSound());
+                
+                // Start screen buttons
+                document.getElementById('btn-new-game').addEventListener('click', () => this.newGame());
+                document.getElementById('btn-resume').addEventListener('click', () => this.resumeGame());
+                
+                // Update sound button
+                this.updateSoundButton();
+            }
+            
+            checkForSave() {
+                const resumeBtn = document.getElementById('btn-resume');
+                if (this.state.hasSave()) {
+                    resumeBtn.disabled = false;
+                }
+            }
+            
+            playSound(soundName) {
+                if (!this.soundEnabled) return;
+                const sound = this.sounds[soundName];
+                if (sound) {
+                    sound.currentTime = 0;
+                    sound.play().catch(() => {}); // Ignore autoplay errors
+                }
+            }
+            
+            toggleSound() {
+                this.soundEnabled = !this.soundEnabled;
+                localStorage.setItem('arabia_sound', this.soundEnabled);
+                this.updateSoundButton();
+            }
+            
+            updateSoundButton() {
+                const btn = document.getElementById('btn-sound');
+                btn.textContent = this.soundEnabled ? '🔊' : '🔇';
+            }
+            
+            newGame() {
+                this.state.resetState();
+                this.state.save();
+                this.startGame();
+            }
+            
+            resumeGame() {
+                this.state.loadState();
+                this.startGame();
+            }
+            
+            startGame() {
+                document.getElementById('start-screen').classList.add('hidden');
+                document.getElementById('game-content').classList.remove('hidden');
+                document.getElementById('header').classList.remove('hidden');
+                this.goToSection(this.state.current_section);
+            }
+            
+            goToSection(sectionId) {
+                const section = SECTIONS[sectionId];
+                if (!section) {
+                    console.error('Section not found:', sectionId);
+                    return;
+                }
+                
+                this.state.current_section = sectionId;
+                
+                // Apply state changes
+                if (section.state_changes) {
+                    this.applyStateChanges(section.state_changes);
+                }
+                
+                // Render section
+                this.renderSection(section);
+                
+                // Auto-redirect if specified
+                if (section.auto_redirect) {
+                    setTimeout(() => this.goToSection(section.auto_redirect), 500);
+                    return;
+                }
+                
+                // Save state
+                this.state.save();
+                this.updateUI();
+                
+                // Scroll to top
+                document.getElementById('main').scrollTop = 0;
+            }
+            
+            applyStateChanges(changes) {
+                changes.forEach(change => {
+                    const varName = change.var;
+                    
+                    if (change.op === 'set') {
+                        this.state[varName] = change.value;
+                    } else if (change.op === 'add') {
+                        this.state[varName] = (this.state[varName] || 0) + change.value;
+                        
+                        // Play sounds for money/life changes
+                        if (varName === 'money') {
+                            this.playSound('money');
+                        } else if (varName === 'life_points' && change.value < 0) {
+                            this.playSound('damage');
+                        }
+                    }
+                    
+                    // Clamp life points
+                    if (varName === 'life_points') {
+                        this.state.life_points = Math.max(0, Math.min(this.state.life_points, this.state.life_points_max));
+                    }
+                });
+            }
+            
+            renderSection(section) {
+                const textEl = document.getElementById('section-text');
+                const optionsEl = document.getElementById('options');
+                
+                // Render text
+                textEl.innerHTML = section.text;
+                textEl.classList.add('fade-in');
+                setTimeout(() => textEl.classList.remove('fade-in'), 300);
+                
+                // Render options
+                optionsEl.innerHTML = '';
+                section.options.forEach(option => {
+                    if (option.conditions && !this.checkConditions(option.conditions)) {
+                        return; // Skip if conditions not met
+                    }
+                    
+                    const btn = document.createElement('button');
+                    btn.className = 'option-btn';
+                    
+                    if (option.shop_id !== undefined) {
+                        // Shop item
+                        const shopKey = `sect_${section.id}_${option.item}`;
+                        const alreadyPurchased = this.state.shopPurchases[shopKey];
+                        const canAfford = this.state.money >= option.price;
+                        
+                        if (alreadyPurchased) {
+                            btn.innerHTML = `<div class="shop-item"><span class="shop-item-text">${option.text}</span><span class="shop-item-status">Out of stock</span></div>`;
+                            btn.disabled = true;
+                            btn.style.opacity = '0.5';
+                            btn.style.cursor = 'not-allowed';
+                        } else if (!canAfford) {
+                            btn.innerHTML = `<div class="shop-item"><span class="shop-item-text">${option.text}</span><span class="shop-item-status">Not enough money</span></div>`;
+                            btn.disabled = true;
+                            btn.style.opacity = '0.5';
+                            btn.style.cursor = 'not-allowed';
+                        } else {
+                            btn.innerHTML = option.text;
+                            btn.addEventListener('click', () => {
+                                this.playSound('click');
+                                this.handleShopPurchase(option, shopKey);
+                            });
+                        }
+                    } else {
+                        // Normal option
+                        btn.textContent = option.text;
+                        btn.addEventListener('click', () => {
+                            this.playSound('click');
+                            this.goToSection(option.target);
+                        });
+                    }
+                    
+                    optionsEl.appendChild(btn);
+                });
+            }
+            
+            checkConditions(conditions) {
+                if (!conditions) return true;
+                
+                if (conditions.and) {
+                    return conditions.and.every(c => this.checkCondition(c));
+                } else if (conditions.or) {
+                    return conditions.or.some(c => this.checkCondition(c));
+                } else {
+                    return this.checkCondition(conditions);
+                }
+            }
+            
+            checkCondition(condition) {
+                const value = this.state[condition.var];
+                
+                switch (condition.op) {
+                    case '==': return value == condition.value;
+                    case '!=': return value != condition.value;
+                    case '>': return value > condition.value;
+                    case '<': return value < condition.value;
+                    case '>=': return value >= condition.value;
+                    case '<=': return value <= condition.value;
+                    default: return true;
+                }
+            }
+            
+            handleShopPurchase(option, shopKey) {
+                if (!confirm(`Buy ${option.item.replace('_', ' ')} for ${option.price} dinars?`)) {
+                    return;
+                }
+                
+                // Deduct money
+                this.state.money -= option.price;
+                this.playSound('money');
+                
+                // Add item (increment if countable)
+                if (this.state[option.item] !== undefined) {
+                    this.state[option.item]++;
+                } else {
+                    this.state[option.item] = 1;
+                }
+                
+                // Mark as purchased at this shop
+                this.state.shopPurchases[shopKey] = true;
+                
+                // Re-render section to update shop display
+                const section = SECTIONS[this.state.current_section];
+                this.renderSection(section);
+                
+                // Save and update UI
+                this.state.save();
+                this.updateUI();
+            }
+            
+            updateUI() {
+                document.getElementById('stat-money').textContent = this.state.money;
+                document.getElementById('stat-life').textContent = this.state.life_points;
+            }
+            
+            showCharacterSheet() {
+                const sheet = document.getElementById('character-sheet');
+                
+                if (this.state.char_chosen === 0) {
+                    sheet.innerHTML = '<p>Once you have chosen a character, all their details will be listed here.</p>';
+                } else {
+                    let html = '';
+                    
+                    // Skills
+                    html += '<div class="cs-section"><h3>Skills</h3><div class="cs-skills">';
+                    ['AGILITY', 'ARCHERY', 'CUNNING', 'FOLKLORE', 'LUCK', 'MAGIC', 'ROGUERY', 'SEAFARING', 'STREETWISE', 'SWORDPLAY', 'WILDERNESS_LORE', 'WRESTLING'].forEach(skill => {
+                        if (this.state[skill] > 0) {
+                            const displayName = skill.replace('_', ' ');
+                            html += `<span class="cs-skill-badge">${displayName}</span>`;
+                        }
+                    });
+                    html += '</div></div>';
+                    
+                    // Stats
+                    html += '<div class="cs-section"><h3>Stats</h3><div class="cs-stats">';
+                    html += `<div class="cs-stat"><div class="cs-stat-label">Money</div><div class="cs-stat-value">${this.state.money} dinars</div></div>`;
+                    html += `<div class="cs-stat"><div class="cs-stat-label">Life Points</div><div class="cs-stat-value">${this.state.life_points}</div></div>`;
+                    html += '</div></div>';
+                    
+                    // Possessions
+                    html += '<div class="cs-section"><h3>Possessions</h3><div class="cs-possessions">';
+                    const possessions = ['antidote', 'black_jewel', 'bow', 'chart', 'cloak', 'diamond', 'golden_apple', 'harem_costume', 'hawk', 'indian_rope', 'jasmine_flower', 'jericho_horn', 'jewelled_key', 'jewelled_sword', 'lamp_of_antar', 'long_tailed_cat', 'magic_slippers', 'mirror', 'prayer_mat', 'ring', 'sword', 'water_bottle'];
+                    let hasAny = false;
+                    possessions.forEach(item => {
+                        if (this.state[item] > 0) {
+                            hasAny = true;
+                            const displayName = item.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+                            let badge = `<span class="cs-item-badge">${displayName}`;
+                            if (this.state[item] > 1) {
+                                badge += ` (×${this.state[item]})`;
+                            }
+                            if (item === 'golden_apple' && this.state.life_points < this.state.life_points_max) {
+                                badge += ` <button class="eat-btn" onclick="game.eatApple()">Eat</button>`;
+                            }
+                            badge += '</span>';
+                            html += badge;
+                        }
+                    });
+                    if (!hasAny) {
+                        html += '<span class="cs-item-badge">None</span>';
+                    }
+                    html += '</div></div>';
+                    
+                    sheet.innerHTML = html;
+                }
+                
+                document.getElementById('modal-character').classList.add('active');
+            }
+            
+            eatApple() {
+                if (this.state.golden_apple === 0) {
+                    alert("You don't have any golden apples!");
+                    return;
+                }
+                
+                if (this.state.life_points === 0) {
+                    alert("You can't eat when you're dead!");
+                    return;
+                }
+                
+                if (this.state.life_points >= this.state.life_points_max) {
+                    alert("You are at full strength. Save the apple for later.");
+                    return;
+                }
+                
+                this.state.golden_apple--;
+                this.state.life_points++;
+                this.state.save();
+                this.updateUI();
+                this.showCharacterSheet(); // Refresh display
+            }
+            
+            showMap() {
+                this.playSound('map');
+                document.getElementById('modal-map').classList.add('active');
+            }
+            
+            confirmReset() {
+                if (confirm('Are you sure you want to reset the game? All progress will be lost.')) {
+                    localStorage.removeItem('arabia_save');
+                    location.reload();
+                }
+            }
+        }
+        
+        // ===== INITIALIZE GAME =====
+        let game;
+        
+        window.addEventListener('DOMContentLoaded', () => {
+            game = new GameEngine();
+        });
+        
+        // ===== SERVICE WORKER REGISTRATION =====
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then(reg => console.log('Service Worker registered'))
+                    .catch(err => console.log('Service Worker registration failed:', err));
+            });
+        }
+    </script>
+</body>
+</html>
