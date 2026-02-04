@@ -877,6 +877,11 @@
                     if (varName === 'life_points') {
                         this.state.life_points = Math.max(0, Math.min(this.state.life_points, this.state.life_points_max));
                     }
+                    
+                    // Clamp money to prevent negative
+                    if (varName === 'money') {
+                        this.state.money = Math.max(0, this.state.money);
+                    }
                 });
             }
             
@@ -901,26 +906,51 @@
                     
                     if (option.shop_id !== undefined) {
                         // Shop item
-                        const shopKey = `sect_${section.id}_${option.item}`;
+                        const shopKey = `sect_${section.id}_${option.shop_id}`;
                         const alreadyPurchased = this.state.shopPurchases[shopKey];
-                        const canAfford = this.state.money >= option.price;
+                        
+                        let canPurchase = false;
+                        let statusText = '';
                         
                         if (alreadyPurchased) {
-                            btn.innerHTML = `<div class="shop-item"><span class="shop-item-text">${option.text}</span><span class="shop-item-status">Out of stock</span></div>`;
-                            btn.disabled = true;
-                            btn.style.opacity = '0.5';
-                            btn.style.cursor = 'not-allowed';
-                        } else if (!canAfford) {
-                            btn.innerHTML = `<div class="shop-item"><span class="shop-item-text">${option.text}</span><span class="shop-item-status">Not enough money</span></div>`;
-                            btn.disabled = true;
-                            btn.style.opacity = '0.5';
-                            btn.style.cursor = 'not-allowed';
-                        } else {
+                            statusText = 'Already purchased';
+                        } else if (option.price !== undefined) {
+                            // Buy transaction
+                            const itemVar = option.item.toUpperCase();
+                            const hasItem = this.state[itemVar] > 0;
+                            const canAfford = this.state.money >= option.price;
+                            
+                            if (hasItem) {
+                                statusText = 'Already own';
+                            } else if (!canAfford) {
+                                statusText = 'Not enough money';
+                            } else {
+                                canPurchase = true;
+                            }
+                        } else if (option.give_item !== undefined) {
+                            // Trade transaction
+                            const giveVar = option.give_item.toUpperCase();
+                            const hasGiveItem = this.state[giveVar] > 0;
+                            
+                            if (!hasGiveItem) {
+                                const itemName = option.give_item.replace(/_/g, ' ');
+                                statusText = `Need ${itemName}`;
+                            } else {
+                                canPurchase = true;
+                            }
+                        }
+                        
+                        if (canPurchase) {
                             btn.innerHTML = option.text;
                             btn.addEventListener('click', () => {
                                 this.playSound('click');
                                 this.handleShopPurchase(option, shopKey);
                             });
+                        } else {
+                            btn.innerHTML = `<div class="shop-item"><span class="shop-item-text">${option.text}</span><span class="shop-item-status">${statusText}</span></div>`;
+                            btn.disabled = true;
+                            btn.style.opacity = '0.5';
+                            btn.style.cursor = 'not-allowed';
                         }
                     } else {
                         // Normal option
@@ -971,19 +1001,50 @@
             }
             
             handleShopPurchase(option, shopKey) {
-                if (!confirm(`Buy ${option.item.replace('_', ' ')} for ${option.price} dinars?`)) {
+                // Build confirmation message
+                let confirmMsg = '';
+                if (option.price !== undefined) {
+                    // Buy transaction
+                    const itemName = option.item.replace(/_/g, ' ');
+                    confirmMsg = `Buy ${itemName} for ${option.price} dinars?`;
+                } else if (option.give_item !== undefined) {
+                    // Trade transaction  
+                    const giveItemName = option.give_item.replace(/_/g, ' ');
+                    const getItemName = option.get_item.replace(/_/g, ' ');
+                    const getAmount = option.get_amount || 1;
+                    confirmMsg = `Trade your ${giveItemName} for ${getAmount} ${getItemName}${getAmount > 1 ? 's' : ''}?`;
+                }
+                
+                if (!confirm(confirmMsg)) {
                     return;
                 }
                 
-                // Deduct money
-                this.state.money -= option.price;
-                this.playSound('money');
-                
-                // Add item (increment if countable)
-                if (this.state[option.item] !== undefined) {
-                    this.state[option.item]++;
-                } else {
-                    this.state[option.item] = 1;
+                if (option.price !== undefined) {
+                    // Buy transaction
+                    this.state.money -= option.price;
+                    this.playSound('money');
+                    
+                    const itemVar = option.item.toUpperCase();
+                    if (this.state[itemVar] !== undefined) {
+                        this.state[itemVar]++;
+                    } else {
+                        this.state[itemVar] = 1;
+                    }
+                } else if (option.give_item !== undefined) {
+                    // Trade transaction
+                    const giveVar = option.give_item.toUpperCase();
+                    const getVar = option.get_item.toUpperCase();
+                    
+                    // Remove traded item
+                    this.state[giveVar]--;
+                    
+                    // Add received item(s)
+                    const getAmount = option.get_amount || 1;
+                    if (this.state[getVar] !== undefined) {
+                        this.state[getVar] += getAmount;
+                    } else {
+                        this.state[getVar] = getAmount;
+                    }
                 }
                 
                 // Mark as purchased at this shop
@@ -1076,6 +1137,8 @@
                 
                 this.state.golden_apple--;
                 this.state.life_points++;
+                // Clamp to max (defensive programming)
+                this.state.life_points = Math.min(this.state.life_points, this.state.life_points_max);
                 this.state.save();
                 this.updateUI();
                 this.showCharacterSheet(); // Refresh display

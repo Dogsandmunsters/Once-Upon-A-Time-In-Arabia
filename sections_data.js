@@ -613,7 +613,10 @@ const SECTIONS = {
     "options": [
       {
         "id": 0,
-        "text": "Buy a golden apple for 5 dinars"
+        "text": "Buy a golden apple for 5 dinars",
+        "shop_id": 1,
+        "item": "golden_apple",
+        "price": 5
       },
       {
         "id": 2,
@@ -1674,19 +1677,35 @@ const SECTIONS = {
     "options": [
       {
         "id": 0,
-        "text": "Swap your jewelled sword for 2 golden apples."
+        "text": "Swap your jewelled sword for 2 golden apples.",
+        "shop_id": 2,
+        "give_item": "jewelled_sword",
+        "get_item": "golden_apple",
+        "get_amount": 2
       },
       {
         "id": 2,
-        "text": "Swap your cloak for 1 golden apple."
+        "text": "Swap your cloak for 1 golden apple.",
+        "shop_id": 3,
+        "give_item": "cloak",
+        "get_item": "golden_apple",
+        "get_amount": 1
       },
       {
         "id": 4,
-        "text": "Swap your hawk for 1 golden apple."
+        "text": "Swap your hawk for 1 golden apple.",
+        "shop_id": 4,
+        "give_item": "hawk",
+        "get_item": "golden_apple",
+        "get_amount": 1
       },
       {
         "id": 6,
-        "text": "Swap a black jewel for 2 golden apples."
+        "text": "Swap a black jewel for 2 golden apples.",
+        "shop_id": 5,
+        "give_item": "black_jewel",
+        "get_item": "golden_apple",
+        "get_amount": 2
       },
       {
         "id": 8,
@@ -7730,19 +7749,31 @@ const SECTIONS = {
     "options": [
       {
         "id": 0,
-        "text": "Buy a water bottle for 5 dinars"
+        "text": "Buy a water bottle for 5 dinars",
+        "shop_id": 7,
+        "item": "water_bottle",
+        "price": 5
       },
       {
         "id": 3,
-        "text": "Buy a bow for 40 dinars"
+        "text": "Buy a bow for 40 dinars",
+        "shop_id": 8,
+        "item": "bow",
+        "price": 40
       },
       {
         "id": 6,
-        "text": "Buy a mirror for 30 dinars"
+        "text": "Buy a mirror for 30 dinars",
+        "shop_id": 9,
+        "item": "mirror",
+        "price": 30
       },
       {
         "id": 9,
-        "text": "Buy a sword for 30 dinars"
+        "text": "Buy a sword for 30 dinars",
+        "shop_id": 10,
+        "item": "sword",
+        "price": 30
       },
       {
         "id": 12,
@@ -8156,7 +8187,10 @@ const SECTIONS = {
     "options": [
       {
         "id": 0,
-        "text": "Buy a golden apple for 5 dinars"
+        "text": "Buy a golden apple for 5 dinars",
+        "shop_id": 6,
+        "item": "golden_apple",
+        "price": 5
       },
       {
         "id": 2,
@@ -8647,15 +8681,24 @@ const SECTIONS = {
     "options": [
       {
         "id": 0,
-        "text": "Buy a water bottle for 1 dinar"
+        "text": "Buy a water bottle for 1 dinar",
+        "shop_id": 11,
+        "item": "water_bottle",
+        "price": 1
       },
       {
         "id": 3,
-        "text": "Buy a mirror for 20 dinars"
+        "text": "Buy a mirror for 20 dinars",
+        "shop_id": 12,
+        "item": "mirror",
+        "price": 20
       },
       {
         "id": 6,
-        "text": "Buy a hawk for 20 dinars"
+        "text": "Buy a hawk for 20 dinars",
+        "shop_id": 13,
+        "item": "hawk",
+        "price": 20
       },
       {
         "id": 9,
@@ -8985,15 +9028,24 @@ const SECTIONS = {
     "options": [
       {
         "id": 0,
-        "text": "Buy a water bottle for 2 dinars"
+        "text": "Buy a water bottle for 2 dinars",
+        "shop_id": 14,
+        "item": "water_bottle",
+        "price": 2
       },
       {
         "id": 3,
-        "text": "Buy an antidote for 60 dinars"
+        "text": "Buy an antidote for 60 dinars",
+        "shop_id": 15,
+        "item": "mirror",
+        "price": 15
       },
       {
         "id": 6,
-        "text": "Buy a sword for 15 dinars"
+        "text": "Buy a sword for 15 dinars",
+        "shop_id": 16,
+        "item": "bow",
+        "price": 50
       },
       {
         "id": 9,
@@ -11278,35 +11330,59 @@ const SECTIONS = {
     "options": [
       {
         "id": 0,
-        "text": "Sell your ordinary sword for 20 dinars."
+        "text": "Sell your ordinary sword for 20 dinars.",
+        "shop_id": 25,
+        "item": "sword",
+        "price": 25
       },
       {
         "id": 2,
-        "text": "Sell your jewelled sword for 50 dinars."
+        "text": "Sell your jewelled sword for 50 dinars.",
+        "shop_id": 26,
+        "item": "hawk",
+        "price": 30
       },
       {
         "id": 4,
-        "text": "Sell your cloak for 20 dinars."
+        "text": "Sell your cloak for 20 dinars.",
+        "shop_id": 27,
+        "item": "water_bottle",
+        "price": 1
       },
       {
         "id": 6,
-        "text": "Sell a magic ring for 50 dinars."
+        "text": "Sell a magic ring for 50 dinars.",
+        "shop_id": 28,
+        "item": "mirror",
+        "price": 15
       },
       {
         "id": 8,
-        "text": "Sell your bow for 20 dinars."
+        "text": "Sell your bow for 20 dinars.",
+        "shop_id": 29,
+        "item": "sword",
+        "price": 10
       },
       {
         "id": 10,
-        "text": "Sell a black jewel for 50 dinars."
+        "text": "Sell a black jewel for 50 dinars.",
+        "shop_id": 30,
+        "item": "bow",
+        "price": 15
       },
       {
         "id": 12,
-        "text": "Sell the lamp of Antar for 90 dinars."
+        "text": "Sell the lamp of Antar for 90 dinars.",
+        "shop_id": 31,
+        "item": "cloak",
+        "price": 30
       },
       {
         "id": 14,
-        "text": "Sell your Indian rope for 80 dinars."
+        "text": "Sell your Indian rope for 80 dinars.",
+        "shop_id": 32,
+        "item": "hawk",
+        "price": 20
       },
       {
         "id": 16,
@@ -11510,35 +11586,59 @@ const SECTIONS = {
     "options": [
       {
         "id": 0,
-        "text": "Buy an antidote for 90 dinars"
+        "text": "Buy an antidote for 90 dinars",
+        "shop_id": 17,
+        "item": "sword",
+        "price": 50
       },
       {
         "id": 3,
-        "text": "Buy a water bottle for 30 dinars"
+        "text": "Buy a water bottle for 30 dinars",
+        "shop_id": 18,
+        "item": "jewelled_sword",
+        "price": 200
       },
       {
         "id": 6,
-        "text": "Buy some Indian rope for 300 dinars"
+        "text": "Buy some Indian rope for 300 dinars",
+        "shop_id": 19,
+        "item": "chart",
+        "price": 50
       },
       {
         "id": 9,
-        "text": "Buy a ring for 80 dinars"
+        "text": "Buy a ring for 80 dinars",
+        "shop_id": 20,
+        "item": "hawk",
+        "price": 15
       },
       {
         "id": 12,
-        "text": "Buy a bow for 50 dinars"
+        "text": "Buy a bow for 50 dinars",
+        "shop_id": 21,
+        "item": "cloak",
+        "price": 20
       },
       {
         "id": 15,
-        "text": "Buy a mirror for 40 dinars"
+        "text": "Buy a mirror for 40 dinars",
+        "shop_id": 22,
+        "item": "water_bottle",
+        "price": 3
       },
       {
         "id": 18,
-        "text": "Buy a sword for 20 dinars"
+        "text": "Buy a sword for 20 dinars",
+        "shop_id": 23,
+        "item": "bow",
+        "price": 35
       },
       {
         "id": 21,
-        "text": "Buy a black jewel for 90 dinars"
+        "text": "Buy a black jewel for 90 dinars",
+        "shop_id": 24,
+        "item": "mirror",
+        "price": 25
       },
       {
         "id": 24,
@@ -12043,7 +12143,9 @@ const SECTIONS = {
     "options": [
       {
         "id": 0,
-        "text": "Add 200 dinars"
+        "text": "Add 200 dinars",
+        "shop_id": 33,
+        "test_money": 200
       },
       {
         "id": 1,
