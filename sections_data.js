@@ -1471,7 +1471,7 @@ const SECTIONS = {
   },
   "50": {
     "id": "50",
-    "text": "<img src=\"./images/050_illo.jpg\" alt=\"\"> 'Come,' says the gryphon. It leads you to a vestibule where you see a table of platinum that glints with a liquid sheen. On the table rest two objects: a sapphire the size of an eye, and a whole leg of burnished gold. Pressing the sapphire to your empty socket, you discover that you can see as well through it as you could with the eye you lost. The leg, too, knits to your flesh. It is as strong as your former limb.</p><p> </div> </p>",
+    "text": "<p> 'Come,' says the gryphon. It leads you to a vestibule where you see a table of platinum that glints with a liquid sheen. On the table rest two objects: a sapphire the size of an eye, and a whole leg of burnished gold. Pressing the sapphire to your empty socket, you discover that you can see as well through it as you could with the eye you lost. The leg, too, knits to your flesh. It is as strong as your former limb.</p><p> </div> </p>",
     "options": [
       {
         "id": 0,
@@ -9112,7 +9112,7 @@ const SECTIONS = {
   },
   "393": {
     "id": "393",
-    "text": "<p> Guided either by intuition or long experience, you stick to the course the pirates were on when last seen.</p><p>'Surely they must be trickier than that?' complains the first mate.</p><p>You shake your head. 'Not at all. Remember that no other vessel has been able to track them. They're confident of their ability to vanish into thin air, so why would they worry about pursuit?' </p><p>At dusk you arrive at high cliffs rising at the edge of the sea. Carved into the side of the cliff are two ancient colossi with heads of lions. Between them is a vast stone slab. </p><p>'It may be a door,' says the first mate, 'but I can't see any way of getting it open.'</p><p> </div> </p>",
+    "text": "<img src=\"./images/050_illo.jpg\" alt=\"\"> Guided either by intuition or long experience, you stick to the course the pirates were on when last seen.</p><p>'Surely they must be trickier than that?' complains the first mate.</p><p>You shake your head. 'Not at all. Remember that no other vessel has been able to track them. They're confident of their ability to vanish into thin air, so why would they worry about pursuit?' </p><p>At dusk you arrive at high cliffs rising at the edge of the sea. Carved into the side of the cliff are two ancient colossi with heads of lions. Between them is a vast stone slab. </p><p>'It may be a door,' says the first mate, 'but I can't see any way of getting it open.'</p><p> </div> </p>",
     "options": [
       {
         "id": 0,
