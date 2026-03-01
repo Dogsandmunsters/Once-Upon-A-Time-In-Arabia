@@ -799,7 +799,12 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Tell him about the magic slippers.",
-        "target": "87"
+        "target": "87",
+        "conditions": {
+          "var": "magic_slippers",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
@@ -1159,7 +1164,12 @@ const SECTIONS = {
       {
         "id": 1,
         "text": "Use a sword.",
-        "target": "391"
+        "target": "391",
+        "conditions": {
+          "var": "sword",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 2,
@@ -1295,7 +1305,12 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Tell him about the Indian rope trick.",
-        "target": "110"
+        "target": "110",
+        "conditions": {
+          "var": "indian_rope",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
@@ -1879,12 +1894,22 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Use magic slippers.",
-        "target": "133"
+        "target": "133",
+        "conditions": {
+          "var": "magic_slippers",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
         "text": "Use Indian rope.",
-        "target": "133"
+        "target": "133",
+        "conditions": {
+          "var": "indian_rope",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 2,
@@ -2082,7 +2107,12 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Use your archery skill.",
-        "target": "230"
+        "target": "230",
+        "conditions": {
+          "var": "archery",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
@@ -2171,7 +2201,12 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Maybe luck is with you.",
-        "target": "119"
+        "target": "119",
+        "conditions": {
+          "var": "luck",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
@@ -2747,7 +2782,12 @@ const SECTIONS = {
       {
         "id": 1,
         "text": "Use the lamp of Antar.",
-        "target": "485"
+        "target": "485",
+        "conditions": {
+          "var": "lamp_of_antar",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 2,
@@ -3030,12 +3070,22 @@ const SECTIONS = {
       {
         "id": 1,
         "text": "Use the lamp to make yourself invisible.",
-        "target": "45"
+        "target": "45",
+        "conditions": {
+          "var": "lamp_of_antar",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 2,
         "text": "Sell your diamond.",
-        "target": "194"
+        "target": "194",
+        "conditions": {
+          "var": "diamond",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 3,
@@ -3087,7 +3137,12 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Use your bow.",
-        "target": "230"
+        "target": "230",
+        "conditions": {
+          "var": "bow",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
@@ -3262,7 +3317,12 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Your black jewel begins to glow.",
-        "target": "126a"
+        "target": "126a",
+        "conditions": {
+          "var": "black_jewel",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
@@ -3388,7 +3448,12 @@ const SECTIONS = {
       {
         "id": 2,
         "text": "See if your hawk can help.",
-        "target": "201"
+        "target": "201",
+        "conditions": {
+          "var": "hawk",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 3,
@@ -3409,12 +3474,22 @@ const SECTIONS = {
       {
         "id": 1,
         "text": "Trust your agility.",
-        "target": "88"
+        "target": "88",
+        "conditions": {
+          "var": "agility",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 2,
         "text": "Try using your black jewel.",
-        "target": "156"
+        "target": "156",
+        "conditions": {
+          "var": "black_jewel",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 3,
@@ -3528,7 +3603,12 @@ const SECTIONS = {
       {
         "id": 3,
         "text": "You can only trust to luck.",
-        "target": "248"
+        "target": "248",
+        "conditions": {
+          "var": "luck",
+          "op": ">",
+          "value": 0
+        }
       }
     ]
   },
@@ -3555,7 +3635,12 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Use your bow.",
-        "target": "230"
+        "target": "230",
+        "conditions": {
+          "var": "bow",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
@@ -3714,7 +3799,12 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Deflect the curse with magic of your own.",
-        "target": "324"
+        "target": "324",
+        "conditions": {
+          "var": "magic",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
@@ -3907,7 +3997,12 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Fall back on your seafaring skills.",
-        "target": "39"
+        "target": "39",
+        "conditions": {
+          "var": "seafaring",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
@@ -3934,17 +4029,32 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Put on your magic slippers.",
-        "target": "336"
+        "target": "336",
+        "conditions": {
+          "var": "magic_slippers",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
         "text": "Use the coil of Indian rope.",
-        "target": "292"
+        "target": "292",
+        "conditions": {
+          "var": "indian_rope",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 2,
         "text": "Where's that long tailed cat?",
-        "target": "314"
+        "target": "314",
+        "conditions": {
+          "var": "long_tailed_cat",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 3,
@@ -4401,7 +4511,12 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Your black jewel may protect you.",
-        "target": "202"
+        "target": "202",
+        "conditions": {
+          "var": "black_jewel",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
@@ -4505,7 +4620,12 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Draw the jewelled sword you stole.",
-        "target": "208"
+        "target": "208",
+        "conditions": {
+          "var": "jewelled_sword",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
@@ -4872,17 +4992,32 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "The long-tailed cat could be useful.",
-        "target": "316"
+        "target": "316",
+        "conditions": {
+          "var": "long_tailed_cat",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
         "text": "Put on your magic slippers.",
-        "target": "338"
+        "target": "338",
+        "conditions": {
+          "var": "magic_slippers",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 2,
         "text": "Use the Indian rope.",
-        "target": "360"
+        "target": "360",
+        "conditions": {
+          "var": "indian_rope",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 3,
@@ -4940,7 +5075,12 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Draw your bow.",
-        "target": "230"
+        "target": "230",
+        "conditions": {
+          "var": "bow",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
@@ -5230,17 +5370,32 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Draw your bow.",
-        "target": "268"
+        "target": "268",
+        "conditions": {
+          "var": "bow",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
         "text": "Ready a mirror.",
-        "target": "291"
+        "target": "291",
+        "conditions": {
+          "var": "mirror",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 2,
         "text": "Whip off your cloak.",
-        "target": "313"
+        "target": "313",
+        "conditions": {
+          "var": "cloak",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 3,
@@ -5506,7 +5661,12 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Draw your sword.",
-        "target": "304"
+        "target": "304",
+        "conditions": {
+          "var": "sword",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
@@ -5633,7 +5793,12 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Send your hawk aloft.",
-        "target": "458"
+        "target": "458",
+        "conditions": {
+          "var": "hawk",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
@@ -5834,7 +5999,12 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Absorb the spell into your black jewel.",
-        "target": "293"
+        "target": "293",
+        "conditions": {
+          "var": "black_jewel",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
@@ -5901,17 +6071,32 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "The long-tailed cat could be useful.",
-        "target": "316"
+        "target": "316",
+        "conditions": {
+          "var": "long_tailed_cat",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
         "text": "Put on your magic slippers.",
-        "target": "338"
+        "target": "338",
+        "conditions": {
+          "var": "magic_slippers",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 2,
         "text": "Use the Indian rope.",
-        "target": "360"
+        "target": "360",
+        "conditions": {
+          "var": "indian_rope",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 3,
@@ -6041,7 +6226,12 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Draw your sword.",
-        "target": "278"
+        "target": "278",
+        "conditions": {
+          "var": "sword",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
@@ -6080,12 +6270,22 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Give the flower to the child.",
-        "target": "367"
+        "target": "367",
+        "conditions": {
+          "var": "jasmine_flower",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
         "text": "Give the flower to the child.",
-        "target": "388"
+        "target": "388",
+        "conditions": {
+          "var": "jasmine_flower",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 2,
@@ -6101,7 +6301,12 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Deflect it with magic of your own.",
-        "target": "324"
+        "target": "324",
+        "conditions": {
+          "var": "magic",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
@@ -6117,7 +6322,12 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Draw your sword.",
-        "target": "347"
+        "target": "347",
+        "conditions": {
+          "var": "sword",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
@@ -6522,12 +6732,22 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Whip off your cloak.",
-        "target": "343"
+        "target": "343",
+        "conditions": {
+          "var": "cloak",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
         "text": "Drop your sword and fight barehanded.",
-        "target": "321"
+        "target": "321",
+        "conditions": {
+          "var": "sword",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 2,
@@ -6639,7 +6859,12 @@ const SECTIONS = {
       {
         "id": 3,
         "text": "Use the lamp of Antar to sneak away.",
-        "target": "495"
+        "target": "495",
+        "conditions": {
+          "var": "lamp_of_antar",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 4,
@@ -6845,7 +7070,12 @@ const SECTIONS = {
       {
         "id": 2,
         "text": "Sound the Jericho horn.",
-        "target": "381"
+        "target": "381",
+        "conditions": {
+          "var": "jericho_horn",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 3,
@@ -6868,17 +7098,32 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Time to try on those magic slippers.",
-        "target": "338"
+        "target": "338",
+        "conditions": {
+          "var": "magic_slippers",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
         "text": "Uncoil the Indian rope.",
-        "target": "360"
+        "target": "360",
+        "conditions": {
+          "var": "indian_rope",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 2,
         "text": "Trust to luck.",
-        "target": "157"
+        "target": "157",
+        "conditions": {
+          "var": "luck",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 3,
@@ -6905,7 +7150,12 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Your antidote saves you.",
-        "target": "339"
+        "target": "339",
+        "conditions": {
+          "var": "antidote",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
@@ -7032,7 +7282,12 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Draw your sword.",
-        "target": "278"
+        "target": "278",
+        "conditions": {
+          "var": "sword",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
@@ -7225,7 +7480,12 @@ const SECTIONS = {
       {
         "id": 1,
         "text": "Draw your sword.",
-        "target": "391"
+        "target": "391",
+        "conditions": {
+          "var": "sword",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 2,
@@ -7251,7 +7511,12 @@ const SECTIONS = {
       {
         "id": 2,
         "text": "Trick your way into the Sultan's harem.",
-        "target": "418"
+        "target": "418",
+        "conditions": {
+          "var": "harem",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 3,
@@ -7325,7 +7590,12 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Draw your sword.",
-        "target": "13"
+        "target": "13",
+        "conditions": {
+          "var": "sword",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
@@ -7382,7 +7652,12 @@ const SECTIONS = {
       {
         "id": 3,
         "text": "Use the lamp of Antar to sneak away.",
-        "target": "495"
+        "target": "495",
+        "conditions": {
+          "var": "lamp_of_antar",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 4,
@@ -7484,7 +7759,12 @@ const SECTIONS = {
       {
         "id": 2,
         "text": "Sound the Jericho horn.",
-        "target": "381"
+        "target": "381",
+        "conditions": {
+          "var": "jericho_horn",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 3,
@@ -7583,7 +7863,12 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "They see your sword.",
-        "target": "208"
+        "target": "208",
+        "conditions": {
+          "var": "sword",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
@@ -8255,7 +8540,12 @@ const SECTIONS = {
       {
         "id": 1,
         "text": "Resort to cunning.",
-        "target": "395"
+        "target": "395",
+        "conditions": {
+          "var": "cunning",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 2,
@@ -8265,7 +8555,12 @@ const SECTIONS = {
       {
         "id": 3,
         "text": "Draw your sword.",
-        "target": "13"
+        "target": "13",
+        "conditions": {
+          "var": "sword",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 4,
@@ -8317,7 +8612,12 @@ const SECTIONS = {
       {
         "id": 3,
         "text": "Use the lamp to sneak away unnoticed.",
-        "target": "495"
+        "target": "495",
+        "conditions": {
+          "var": "lamp_of_antar",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 4,
@@ -8774,12 +9074,22 @@ const SECTIONS = {
       {
         "id": 1,
         "text": "Your hawk could help.",
-        "target": "244"
+        "target": "244",
+        "conditions": {
+          "var": "hawk",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 2,
         "text": "What else is Indian rope for?",
-        "target": "334"
+        "target": "334",
+        "conditions": {
+          "var": "indian_rope",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 3,
@@ -8794,7 +9104,12 @@ const SECTIONS = {
       {
         "id": 5,
         "text": "Use the lamp of Antar to sneak away.",
-        "target": "495"
+        "target": "495",
+        "conditions": {
+          "var": "lamp_of_antar",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 6,
@@ -8931,7 +9246,12 @@ const SECTIONS = {
       {
         "id": 2,
         "text": "Drop the sword and surrender.",
-        "target": "2"
+        "target": "2",
+        "conditions": {
+          "var": "sword",
+          "op": ">",
+          "value": 0
+        }
       }
     ],
     "state_changes": [
@@ -9122,7 +9442,12 @@ const SECTIONS = {
       {
         "id": 1,
         "text": "Blow the Jericho horn.",
-        "target": "457"
+        "target": "457",
+        "conditions": {
+          "var": "jericho_horn",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 2,
@@ -9183,7 +9508,12 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Your jewel is absorbing the spell.",
-        "target": "419"
+        "target": "419",
+        "conditions": {
+          "var": "black_jewel",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
@@ -9376,12 +9706,22 @@ const SECTIONS = {
       {
         "id": 1,
         "text": "Trust to luck.",
-        "target": "116"
+        "target": "116",
+        "conditions": {
+          "var": "luck",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 2,
         "text": "Use the hawk.",
-        "target": "139"
+        "target": "139",
+        "conditions": {
+          "var": "hawk",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 3,
@@ -10029,7 +10369,12 @@ const SECTIONS = {
       {
         "id": 2,
         "text": "Use the Jericho horn instead.",
-        "target": "457"
+        "target": "457",
+        "conditions": {
+          "var": "jericho_horn",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 3,
@@ -10131,7 +10476,12 @@ const SECTIONS = {
       {
         "id": 2,
         "text": "Use your cloak.",
-        "target": "273"
+        "target": "273",
+        "conditions": {
+          "var": "cloak",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 3,
@@ -10170,62 +10520,122 @@ const SECTIONS = {
       {
         "id": 1,
         "text": "AGILITY (remove)",
-        "target": "445hr"
+        "target": "445hr",
+        "conditions": {
+          "var": "agility",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 2,
         "text": "ARCHERY (remove)",
-        "target": "445ir"
+        "target": "445ir",
+        "conditions": {
+          "var": "archery",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 3,
         "text": "CUNNING (remove)",
-        "target": "445jr"
+        "target": "445jr",
+        "conditions": {
+          "var": "cunning",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 4,
         "text": "FOLKLORE (remove)",
-        "target": "445kr"
+        "target": "445kr",
+        "conditions": {
+          "var": "folklore",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 5,
         "text": "LUCK (remove)",
-        "target": "445lr"
+        "target": "445lr",
+        "conditions": {
+          "var": "luck",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 6,
         "text": "MAGIC (remove)",
-        "target": "445mr"
+        "target": "445mr",
+        "conditions": {
+          "var": "magic",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 7,
         "text": "ROGUERY (remove)",
-        "target": "445nr"
+        "target": "445nr",
+        "conditions": {
+          "var": "roguery",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 8,
         "text": "SEAFARING (remove)",
-        "target": "445or"
+        "target": "445or",
+        "conditions": {
+          "var": "seafaring",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 9,
         "text": "STREETWISE (remove)",
-        "target": "445pr"
+        "target": "445pr",
+        "conditions": {
+          "var": "streetwise",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 10,
         "text": "SWORDPLAY (remove)",
-        "target": "445qr"
+        "target": "445qr",
+        "conditions": {
+          "var": "swordplay",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 11,
         "text": "WILDERNESS LORE (remove)",
-        "target": "445rr"
+        "target": "445rr",
+        "conditions": {
+          "var": "wilderness_lore",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 12,
         "text": "WRESTLING. (remove)",
-        "target": "445sr"
+        "target": "445sr",
+        "conditions": {
+          "var": "wrestling",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 13,
@@ -11042,7 +11452,12 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Luckily you're as agile as a cat.",
-        "target": "28"
+        "target": "28",
+        "conditions": {
+          "var": "agility",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
@@ -11712,7 +12127,12 @@ const SECTIONS = {
       {
         "id": 2,
         "text": "Use your cloak.",
-        "target": "273"
+        "target": "273",
+        "conditions": {
+          "var": "cloak",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 3,
@@ -11767,12 +12187,22 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Sell the diamond.",
-        "target": "480a"
+        "target": "480a",
+        "conditions": {
+          "var": "diamond",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
         "text": "Sell the jewelled key.",
-        "target": "480b"
+        "target": "480b",
+        "conditions": {
+          "var": "jewelled_key",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 2,
@@ -11932,7 +12362,12 @@ const SECTIONS = {
       {
         "id": 1,
         "text": "Blow the Jericho horn.",
-        "target": "457"
+        "target": "457",
+        "conditions": {
+          "var": "jericho_horn",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 2,
@@ -12046,7 +12481,12 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Hurry after him with the cloak.",
-        "target": "14"
+        "target": "14",
+        "conditions": {
+          "var": "cloak",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
@@ -12073,7 +12513,12 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Use the lamp anyway.",
-        "target": "495a"
+        "target": "495a",
+        "conditions": {
+          "var": "lamp_of_antar",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,

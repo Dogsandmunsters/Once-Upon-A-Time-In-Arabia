@@ -1,7 +1,7 @@
 // Service Worker for Once Upon A Time In Arabia PWA
 // Handles caching for offline functionality
 
-const CACHE_NAME = 'arabia-v2';
+const CACHE_NAME = 'arabia-v3';
 
 const urlsToCache = [
   './',
