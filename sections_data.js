@@ -908,17 +908,41 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "He wants a bribe.",
-        "target": "22a"
+        "target": "22a",
+        "conditions": {
+          "var": "money",
+          "op": ">",
+          "value": 999
+        }
       },
       {
         "id": 1,
         "text": "He wants a bribe.",
-        "target": "22b"
+        "target": "22b",
+        "conditions": {
+          "and": [
+            {
+              "var": "money",
+              "op": ">",
+              "value": 0
+            },
+            {
+              "var": "money",
+              "op": "<",
+              "value": 1000
+            }
+          ]
+        }
       },
       {
         "id": 2,
         "text": "He wants a bribe.",
-        "target": "22c"
+        "target": "22c",
+        "conditions": {
+          "var": "money",
+          "op": "<",
+          "value": 1
+        }
       }
     ]
   },
@@ -947,12 +971,22 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "The chamberlain considers your request.",
-        "target": "22d"
+        "target": "22d",
+        "conditions": {
+          "var": "hajji",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
         "text": "The chamberlain considers your request.",
-        "target": "22e"
+        "target": "22e",
+        "conditions": {
+          "var": "hajji",
+          "op": "==",
+          "value": 0
+        }
       }
     ],
     "state_changes": [
@@ -3505,12 +3539,22 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Press on across the desert.",
-        "target": "168"
+        "target": "168",
+        "conditions": {
+          "var": "wilderness_lore",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
         "text": "Press on across the desert.",
-        "target": "217"
+        "target": "217",
+        "conditions": {
+          "var": "wilderness_lore",
+          "op": "==",
+          "value": 0
+        }
       }
     ]
   },
@@ -9369,12 +9413,22 @@ const SECTIONS = {
       {
         "id": 2,
         "text": "Continue.",
-        "target": "467"
+        "target": "467",
+        "conditions": {
+          "var": "golden_apple",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 3,
         "text": "Continue.",
-        "target": "78"
+        "target": "78",
+        "conditions": {
+          "var": "golden_apple",
+          "op": "==",
+          "value": 0
+        }
       }
     ]
   },
@@ -11244,12 +11298,22 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Go back and tell the others.",
-        "target": "77"
+        "target": "77",
+        "conditions": {
+          "var": "roguery",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
         "text": "Go back and tell the others.",
-        "target": "99"
+        "target": "99",
+        "conditions": {
+          "var": "roguery",
+          "op": "==",
+          "value": 0
+        }
       }
     ]
   },
