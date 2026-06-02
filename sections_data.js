@@ -2169,9 +2169,18 @@ const SECTIONS = {
         "text": "Use your archery skill.",
         "target": "230",
         "conditions": {
-          "var": "archery",
-          "op": ">",
-          "value": 0
+          "and": [
+            {
+              "var": "archery",
+              "op": ">",
+              "value": 0
+            },
+            {
+              "var": "bow",
+              "op": ">",
+              "value": 0
+            }
+          ]
         }
       },
       {
@@ -3901,9 +3910,18 @@ const SECTIONS = {
         "text": "Deflect the curse with magic of your own.",
         "target": "324",
         "conditions": {
-          "var": "magic",
-          "op": ">",
-          "value": 0
+          "and": [
+            {
+              "var": "magic",
+              "op": ">",
+              "value": 0
+            },
+            {
+              "var": "ring",
+              "op": ">",
+              "value": 0
+            }
+          ]
         }
       },
       {
@@ -6493,9 +6511,18 @@ const SECTIONS = {
         "text": "Deflect it with magic of your own.",
         "target": "324",
         "conditions": {
-          "var": "magic",
-          "op": ">",
-          "value": 0
+          "and": [
+            {
+              "var": "magic",
+              "op": ">",
+              "value": 0
+            },
+            {
+              "var": "ring",
+              "op": ">",
+              "value": 0
+            }
+          ]
         }
       },
       {
