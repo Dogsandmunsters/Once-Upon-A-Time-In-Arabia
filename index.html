@@ -827,10 +827,19 @@
                 // Render section
                 this.renderSection(section);
                 
-                // Auto-redirect if specified
+                // Auto-redirect if specified. auto_redirect may be a section
+                // id, or an array of {target, conditions} evaluated in order
+                // (first match wins) for a conditional transition.
                 if (section.auto_redirect) {
-                    setTimeout(() => this.goToSection(section.auto_redirect), 500);
-                    return;
+                    let redirectTarget = section.auto_redirect;
+                    if (Array.isArray(redirectTarget)) {
+                        const match = redirectTarget.find(r => this.checkConditions(r.conditions));
+                        redirectTarget = match ? match.target : null;
+                    }
+                    if (redirectTarget) {
+                        setTimeout(() => this.goToSection(redirectTarget), 500);
+                        return;
+                    }
                 }
                 
                 // Save state

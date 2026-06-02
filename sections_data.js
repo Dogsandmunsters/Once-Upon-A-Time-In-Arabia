@@ -367,7 +367,24 @@ const SECTIONS = {
         "value": -2
       }
     ],
-    "auto_redirect": "2a"
+    "auto_redirect": [
+      {
+        "target": "2a",
+        "conditions": {
+          "var": "life_points",
+          "op": ">",
+          "value": 0
+        }
+      },
+      {
+        "target": "2c",
+        "conditions": {
+          "var": "life_points",
+          "op": "<=",
+          "value": 0
+        }
+      }
+    ]
   },
   "2a": {
     "id": "2a",
@@ -1057,7 +1074,7 @@ const SECTIONS = {
         "conditions": {
           "var": "life_points",
           "op": ">",
-          "value": 0
+          "value": 3
         }
       },
       {
@@ -1067,7 +1084,7 @@ const SECTIONS = {
         "conditions": {
           "var": "life_points",
           "op": "<=",
-          "value": 0
+          "value": 3
         }
       }
     ]
@@ -2960,12 +2977,22 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Wait to hear your owner's orders.",
-        "target": "493"
+        "target": "493",
+        "conditions": {
+          "var": "mordant",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
         "text": "Begin your pilgrimage.",
-        "target": "146"
+        "target": "146",
+        "conditions": {
+          "var": "mordant",
+          "op": "==",
+          "value": 0
+        }
       }
     ]
   },
@@ -3232,7 +3259,12 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Trick your way in to see Jafar.",
-        "target": "205"
+        "target": "205",
+        "conditions": {
+          "var": "zebra",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
@@ -3257,7 +3289,26 @@ const SECTIONS = {
       {
         "id": 3,
         "text": "The Caliph must be told what's going on.",
-        "target": "251"
+        "target": "251",
+        "conditions": {
+          "and": [
+            {
+              "var": "diamond",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "zebra",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "lamp_of_antar",
+              "op": "==",
+              "value": 0
+            }
+          ]
+        }
       }
     ],
     "state_changes": [
@@ -3429,12 +3480,22 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "There are some benefits to being a slave.",
-        "target": "191"
+        "target": "191",
+        "conditions": {
+          "var": "mordant",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
         "text": "Hakim wants a volunteer.",
-        "target": "214"
+        "target": "214",
+        "conditions": {
+          "var": "mordant",
+          "op": "==",
+          "value": 0
+        }
       }
     ]
   },
@@ -5781,12 +5842,22 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "No one cares what a slave thinks.",
-        "target": "286"
+        "target": "286",
+        "conditions": {
+          "var": "mordant",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
         "text": "What now?",
-        "target": "195"
+        "target": "195",
+        "conditions": {
+          "var": "mordant",
+          "op": "==",
+          "value": 0
+        }
       }
     ]
   },
@@ -6519,12 +6590,22 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "You don't like that look in the jinni's eye.",
-        "target": "269"
+        "target": "269",
+        "conditions": {
+          "var": "truce",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
         "text": "Make good your escape.",
-        "target": "246a"
+        "target": "246a",
+        "conditions": {
+          "var": "truce",
+          "op": "==",
+          "value": 0
+        }
       }
     ]
   },
@@ -7077,12 +7158,22 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "'A lavish sum for a slave.'",
-        "target": "67"
+        "target": "67",
+        "conditions": {
+          "var": "mordant",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
         "text": "'Let's get moving.'",
-        "target": "218"
+        "target": "218",
+        "conditions": {
+          "var": "mordant",
+          "op": "==",
+          "value": 0
+        }
       }
     ],
     "state_changes": [
@@ -7275,17 +7366,50 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "It's over. You've won.",
-        "target": "120"
+        "target": "120",
+        "conditions": {
+          "var": "iris",
+          "op": "==",
+          "value": 0
+        }
       },
       {
         "id": 1,
         "text": "Get back to the throne room.",
-        "target": "4"
+        "target": "4",
+        "conditions": {
+          "and": [
+            {
+              "var": "iris",
+              "op": ">",
+              "value": 0
+            },
+            {
+              "var": "harem",
+              "op": ">",
+              "value": 0
+            }
+          ]
+        }
       },
       {
         "id": 2,
         "text": "But not before he poisoned the Caliph.",
-        "target": "19"
+        "target": "19",
+        "conditions": {
+          "and": [
+            {
+              "var": "iris",
+              "op": ">",
+              "value": 0
+            },
+            {
+              "var": "harem",
+              "op": "==",
+              "value": 0
+            }
+          ]
+        }
       }
     ]
   },
@@ -7460,21 +7584,54 @@ const SECTIONS = {
       {
         "id": 1,
         "text": "Summon your jinni.",
-        "target": "355"
+        "target": "355",
+        "conditions": {
+          "and": [
+            {
+              "var": "magic",
+              "op": ">",
+              "value": 0
+            },
+            {
+              "var": "ring",
+              "op": ">",
+              "value": 0
+            },
+            {
+              "var": "s355",
+              "op": "==",
+              "value": 0
+            }
+          ]
+        }
       },
       {
         "id": 2,
         "text": "Go off to explore the tower.",
-        "target": "377"
+        "target": "377",
+        "conditions": {
+          "var": "s377",
+          "op": "==",
+          "value": 0
+        }
       },
       {
         "id": 3,
         "text": "Use the lamp of Antar to sneak away.",
         "target": "495",
         "conditions": {
-          "var": "lamp_of_antar",
-          "op": ">",
-          "value": 0
+          "and": [
+            {
+              "var": "lamp_of_antar",
+              "op": ">",
+              "value": 0
+            },
+            {
+              "var": "s495",
+              "op": "==",
+              "value": 0
+            }
+          ]
         }
       },
       {
@@ -7615,12 +7772,22 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Hakim won't need his slave any more.",
-        "target": "192"
+        "target": "192",
+        "conditions": {
+          "var": "mordant",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
         "text": "You made it.",
-        "target": "284"
+        "target": "284",
+        "conditions": {
+          "var": "mordant",
+          "op": "==",
+          "value": 0
+        }
       }
     ]
   },
@@ -9587,16 +9754,30 @@ const SECTIONS = {
       {
         "id": 2,
         "text": "Investigate the tower.",
-        "target": "377"
+        "target": "377",
+        "conditions": {
+          "var": "s377",
+          "op": "==",
+          "value": 0
+        }
       },
       {
         "id": 3,
         "text": "Use the lamp to sneak away unnoticed.",
         "target": "495",
         "conditions": {
-          "var": "lamp_of_antar",
-          "op": ">",
-          "value": 0
+          "and": [
+            {
+              "var": "lamp_of_antar",
+              "op": ">",
+              "value": 0
+            },
+            {
+              "var": "s495",
+              "op": "==",
+              "value": 0
+            }
+          ]
         }
       },
       {
@@ -10099,16 +10280,44 @@ const SECTIONS = {
       {
         "id": 4,
         "text": "Summon your jinni.",
-        "target": "355"
+        "target": "355",
+        "conditions": {
+          "and": [
+            {
+              "var": "magic",
+              "op": ">",
+              "value": 0
+            },
+            {
+              "var": "ring",
+              "op": ">",
+              "value": 0
+            },
+            {
+              "var": "s355",
+              "op": "==",
+              "value": 0
+            }
+          ]
+        }
       },
       {
         "id": 5,
         "text": "Use the lamp of Antar to sneak away.",
         "target": "495",
         "conditions": {
-          "var": "lamp_of_antar",
-          "op": ">",
-          "value": 0
+          "and": [
+            {
+              "var": "lamp_of_antar",
+              "op": ">",
+              "value": 0
+            },
+            {
+              "var": "s495",
+              "op": "==",
+              "value": 0
+            }
+          ]
         }
       },
       {
@@ -10442,27 +10651,102 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Maybe you know a way.",
-        "target": "437"
+        "target": "437",
+        "conditions": {
+          "or": [
+            {
+              "var": "folklore",
+              "op": ">",
+              "value": 0
+            },
+            {
+              "var": "sesame",
+              "op": ">",
+              "value": 0
+            }
+          ]
+        }
       },
       {
         "id": 1,
         "text": "Blow the Jericho horn.",
         "target": "457",
         "conditions": {
-          "var": "jericho_horn",
-          "op": ">",
-          "value": 0
+          "and": [
+            {
+              "var": "folklore",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "sesame",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "jericho_horn",
+              "op": ">",
+              "value": 0
+            }
+          ]
         }
       },
       {
         "id": 2,
         "text": "Surely your jinni can help.",
-        "target": "440"
+        "target": "440",
+        "conditions": {
+          "and": [
+            {
+              "var": "magic",
+              "op": ">",
+              "value": 0
+            },
+            {
+              "var": "ring",
+              "op": ">",
+              "value": 0
+            }
+          ]
+        }
       },
       {
         "id": 3,
         "text": "You're stumped.",
-        "target": "415"
+        "target": "415",
+        "conditions": {
+          "and": [
+            {
+              "var": "folklore",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "sesame",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "jericho_horn",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "or": [
+                {
+                  "var": "magic",
+                  "op": "==",
+                  "value": 0
+                },
+                {
+                  "var": "ring",
+                  "op": "==",
+                  "value": 0
+                }
+              ]
+            }
+          ]
+        }
       }
     ]
   },
@@ -11477,7 +11761,21 @@ const SECTIONS = {
       {
         "id": 3,
         "text": "Wait - you know how to open it!",
-        "target": "437"
+        "target": "437",
+        "conditions": {
+          "or": [
+            {
+              "var": "folklore",
+              "op": ">",
+              "value": 0
+            },
+            {
+              "var": "sesame",
+              "op": ">",
+              "value": 0
+            }
+          ]
+        }
       }
     ]
   },
@@ -13133,12 +13431,22 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "A friendly face.",
-        "target": "6"
+        "target": "6",
+        "conditions": {
+          "var": "gemini",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
         "text": "Oops.",
-        "target": "29"
+        "target": "29",
+        "conditions": {
+          "var": "gemini",
+          "op": "==",
+          "value": 0
+        }
       }
     ]
   },
@@ -13638,27 +13946,102 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "You know a way.",
-        "target": "437"
+        "target": "437",
+        "conditions": {
+          "or": [
+            {
+              "var": "folklore",
+              "op": ">",
+              "value": 0
+            },
+            {
+              "var": "sesame",
+              "op": ">",
+              "value": 0
+            }
+          ]
+        }
       },
       {
         "id": 1,
         "text": "Blow the Jericho horn.",
         "target": "457",
         "conditions": {
-          "var": "jericho_horn",
-          "op": ">",
-          "value": 0
+          "and": [
+            {
+              "var": "folklore",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "sesame",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "jericho_horn",
+              "op": ">",
+              "value": 0
+            }
+          ]
         }
       },
       {
         "id": 2,
         "text": "Surely your jinni can help.",
-        "target": "440"
+        "target": "440",
+        "conditions": {
+          "and": [
+            {
+              "var": "magic",
+              "op": ">",
+              "value": 0
+            },
+            {
+              "var": "ring",
+              "op": ">",
+              "value": 0
+            }
+          ]
+        }
       },
       {
         "id": 3,
         "text": "You're stumped.",
-        "target": "415"
+        "target": "415",
+        "conditions": {
+          "and": [
+            {
+              "var": "folklore",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "sesame",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "jericho_horn",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "or": [
+                {
+                  "var": "magic",
+                  "op": "==",
+                  "value": 0
+                },
+                {
+                  "var": "ring",
+                  "op": "==",
+                  "value": 0
+                }
+              ]
+            }
+          ]
+        }
       }
     ]
   },
@@ -13809,12 +14192,36 @@ const SECTIONS = {
       {
         "id": 2,
         "text": "Summon your jinni.",
-        "target": "355"
+        "target": "355",
+        "conditions": {
+          "and": [
+            {
+              "var": "magic",
+              "op": ">",
+              "value": 0
+            },
+            {
+              "var": "ring",
+              "op": ">",
+              "value": 0
+            },
+            {
+              "var": "s355",
+              "op": "==",
+              "value": 0
+            }
+          ]
+        }
       },
       {
         "id": 3,
         "text": "Explore the tower.",
-        "target": "377"
+        "target": "377",
+        "conditions": {
+          "var": "s377",
+          "op": "==",
+          "value": 0
+        }
       },
       {
         "id": 4,
