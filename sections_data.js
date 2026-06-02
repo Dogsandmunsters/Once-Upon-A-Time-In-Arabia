@@ -3672,12 +3672,31 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Sneak up and hitch a ride.",
-        "target": "158"
+        "target": "158",
+        "conditions": {
+          "var": "roguery",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
         "text": "Sneak up and hitch a ride.",
-        "target": "136a"
+        "target": "136a",
+        "conditions": {
+          "and": [
+            {
+              "var": "roguery",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "lamp_of_antar",
+              "op": ">",
+              "value": 0
+            }
+          ]
+        }
       },
       {
         "id": 2,
@@ -7612,16 +7631,25 @@ const SECTIONS = {
         "text": "Draw your sword.",
         "target": "278",
         "conditions": {
-          "or": [
+          "and": [
             {
-              "var": "sword",
+              "var": "life_points",
               "op": ">",
               "value": 0
             },
             {
-              "var": "jewelled_sword",
-              "op": ">",
-              "value": 0
+              "or": [
+                {
+                  "var": "sword",
+                  "op": ">",
+                  "value": 0
+                },
+                {
+                  "var": "jewelled_sword",
+                  "op": ">",
+                  "value": 0
+                }
+              ]
             }
           ]
         }
@@ -7632,6 +7660,11 @@ const SECTIONS = {
         "target": "321",
         "conditions": {
           "and": [
+            {
+              "var": "life_points",
+              "op": ">",
+              "value": 0
+            },
             {
               "var": "sword",
               "op": "==",
@@ -7652,6 +7685,11 @@ const SECTIONS = {
         "conditions": {
           "and": [
             {
+              "var": "life_points",
+              "op": ">",
+              "value": 0
+            },
+            {
               "var": "sword",
               "op": "==",
               "value": 0
@@ -7667,12 +7705,22 @@ const SECTIONS = {
       {
         "id": 3,
         "text": "Make a run for it.",
-        "target": "365"
+        "target": "365",
+        "conditions": {
+          "var": "life_points",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 4,
         "text": "You're done for.",
-        "target": "2b"
+        "target": "2b",
+        "conditions": {
+          "var": "life_points",
+          "op": "<=",
+          "value": 0
+        }
       }
     ],
     "state_changes": [
