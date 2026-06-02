@@ -551,12 +551,22 @@ const SECTIONS = {
       {
         "id": 1,
         "text": "Run for your life.",
-        "target": "30"
+        "target": "30",
+        "conditions": {
+          "var": "archery",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 2,
         "text": "Run for your life.",
-        "target": "30a"
+        "target": "30a",
+        "conditions": {
+          "var": "archery",
+          "op": "==",
+          "value": 0
+        }
       }
     ]
   },
