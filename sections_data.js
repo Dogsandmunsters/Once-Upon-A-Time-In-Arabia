@@ -3607,16 +3607,30 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Rely on quick wits to save you.",
-        "target": "65"
+        "target": "65",
+        "conditions": {
+          "var": "cunning",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
         "text": "Trust your agility.",
         "target": "88",
         "conditions": {
-          "var": "agility",
-          "op": ">",
-          "value": 0
+          "and": [
+            {
+              "var": "cunning",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "agility",
+              "op": ">",
+              "value": 0
+            }
+          ]
         }
       },
       {
@@ -3624,15 +3638,48 @@ const SECTIONS = {
         "text": "Try using your black jewel.",
         "target": "156",
         "conditions": {
-          "var": "black_jewel",
-          "op": ">",
-          "value": 0
+          "and": [
+            {
+              "var": "cunning",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "agility",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "black_jewel",
+              "op": ">",
+              "value": 0
+            }
+          ]
         }
       },
       {
         "id": 3,
         "text": "There's nothing to be done.",
-        "target": "134a"
+        "target": "134a",
+        "conditions": {
+          "and": [
+            {
+              "var": "cunning",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "agility",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "black_jewel",
+              "op": "==",
+              "value": 0
+            }
+          ]
+        }
       }
     ]
   },
@@ -4365,7 +4412,26 @@ const SECTIONS = {
       {
         "id": 3,
         "text": "It's impossible.",
-        "target": "155a"
+        "target": "155a",
+        "conditions": {
+          "and": [
+            {
+              "var": "magic_slippers",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "indian_rope",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "long_tailed_cat",
+              "op": "==",
+              "value": 0
+            }
+          ]
+        }
       }
     ]
   },
@@ -5766,7 +5832,26 @@ const SECTIONS = {
       {
         "id": 3,
         "text": "He uncovers his face.",
-        "target": "335"
+        "target": "335",
+        "conditions": {
+          "and": [
+            {
+              "var": "bow",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "mirror",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "cloak",
+              "op": "==",
+              "value": 0
+            }
+          ]
+        }
       }
     ]
   },
@@ -7645,19 +7730,52 @@ const SECTIONS = {
       {
         "id": 1,
         "text": "Can you shrug off the effects?",
-        "target": "295a"
+        "target": "295a",
+        "conditions": {
+          "and": [
+            {
+              "var": "antidote",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "life_points",
+              "op": "<=",
+              "value": 0
+            }
+          ]
+        }
       },
       {
         "id": 2,
         "text": "You've got to keep going.",
-        "target": "339"
+        "target": "339",
+        "conditions": {
+          "and": [
+            {
+              "var": "antidote",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "life_points",
+              "op": ">",
+              "value": 0
+            }
+          ]
+        }
       }
     ],
     "state_changes": [
       {
         "var": "life_points",
         "op": "add",
-        "value": -5
+        "value": -5,
+        "conditions": {
+          "var": "antidote",
+          "op": "==",
+          "value": 0
+        }
       }
     ]
   },

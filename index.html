@@ -843,6 +843,11 @@
             
             applyStateChanges(changes) {
                 changes.forEach(change => {
+                    // Skip changes whose conditions aren't met (e.g. lose Life
+                    // Points only if you lack the antidote)
+                    if (change.conditions && !this.checkConditions(change.conditions)) {
+                        return;
+                    }
                     let varName = change.var;
                     
                     // Convert skill names to uppercase to match state variables
