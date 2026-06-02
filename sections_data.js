@@ -2300,7 +2300,12 @@ const SECTIONS = {
       {
         "id": 1,
         "text": "It's a long way down.",
-        "target": "491"
+        "target": "491",
+        "conditions": {
+          "var": "luck",
+          "op": "==",
+          "value": 0
+        }
       }
     ]
   },
@@ -4180,7 +4185,12 @@ const SECTIONS = {
       {
         "id": 1,
         "text": "Your life is in God's hands.",
-        "target": "62"
+        "target": "62",
+        "conditions": {
+          "var": "seafaring",
+          "op": "==",
+          "value": 0
+        }
       }
     ]
   },
@@ -4714,7 +4724,12 @@ const SECTIONS = {
       {
         "id": 1,
         "text": "You are defenceless against his magic.",
-        "target": "179a"
+        "target": "179a",
+        "conditions": {
+          "var": "black_jewel",
+          "op": "==",
+          "value": 0
+        }
       }
     ]
   },
@@ -4823,7 +4838,12 @@ const SECTIONS = {
       {
         "id": 1,
         "text": "Fight.",
-        "target": "231"
+        "target": "231",
+        "conditions": {
+          "var": "jewelled_sword",
+          "op": "==",
+          "value": 0
+        }
       }
     ]
   },
@@ -6272,7 +6292,12 @@ const SECTIONS = {
       {
         "id": 1,
         "text": "You have no defence.",
-        "target": "315"
+        "target": "315",
+        "conditions": {
+          "var": "black_jewel",
+          "op": "==",
+          "value": 0
+        }
       }
     ],
     "state_changes": [
@@ -8180,7 +8205,7 @@ const SECTIONS = {
         "text": "They see your sword.",
         "target": "208",
         "conditions": {
-          "var": "sword",
+          "var": "jewelled_sword",
           "op": ">",
           "value": 0
         }
@@ -8188,7 +8213,12 @@ const SECTIONS = {
       {
         "id": 1,
         "text": "This will be a tough fight.",
-        "target": "231"
+        "target": "231",
+        "conditions": {
+          "var": "jewelled_sword",
+          "op": "==",
+          "value": 0
+        }
       }
     ]
   },
@@ -10015,7 +10045,12 @@ const SECTIONS = {
       {
         "id": 1,
         "text": "What now?",
-        "target": "397a"
+        "target": "397a",
+        "conditions": {
+          "var": "black_jewel",
+          "op": "==",
+          "value": 0
+        }
       }
     ]
   },
