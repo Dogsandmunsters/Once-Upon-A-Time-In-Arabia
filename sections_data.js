@@ -367,7 +367,24 @@ const SECTIONS = {
         "value": -2
       }
     ],
-    "auto_redirect": "2a"
+    "auto_redirect": [
+      {
+        "target": "2a",
+        "conditions": {
+          "var": "life_points",
+          "op": ">",
+          "value": 0
+        }
+      },
+      {
+        "target": "2c",
+        "conditions": {
+          "var": "life_points",
+          "op": "<=",
+          "value": 0
+        }
+      }
+    ]
   },
   "2a": {
     "id": "2a",
