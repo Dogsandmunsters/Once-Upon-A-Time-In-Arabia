@@ -3745,26 +3745,121 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "But you know the true location.",
-        "target": "203"
+        "target": "203",
+        "conditions": {
+          "or": [
+            {
+              "var": "chart",
+              "op": ">",
+              "value": 0
+            },
+            {
+              "var": "fabric",
+              "op": ">",
+              "value": 0
+            }
+          ]
+        }
       },
       {
         "id": 1,
         "text": "Where do you believe it can be found?",
-        "target": "226"
+        "target": "226",
+        "conditions": {
+          "and": [
+            {
+              "var": "chart",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "fabric",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "or": [
+                {
+                  "var": "folklore",
+                  "op": ">",
+                  "value": 0
+                },
+                {
+                  "var": "seafaring",
+                  "op": ">",
+                  "value": 0
+                }
+              ]
+            }
+          ]
+        }
       },
       {
         "id": 2,
         "text": "Where do you believe it can be found?",
-        "target": "271"
+        "target": "271",
+        "conditions": {
+          "and": [
+            {
+              "var": "chart",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "fabric",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "folklore",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "seafaring",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "kismet",
+              "op": ">",
+              "value": 0
+            }
+          ]
+        }
       },
       {
         "id": 3,
         "text": "You can only trust to luck.",
         "target": "248",
         "conditions": {
-          "var": "luck",
-          "op": ">",
-          "value": 0
+          "and": [
+            {
+              "var": "chart",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "fabric",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "folklore",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "seafaring",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "kismet",
+              "op": "==",
+              "value": 0
+            }
+          ]
         }
       }
     ]
