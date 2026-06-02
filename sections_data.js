@@ -1407,12 +1407,22 @@ const SECTIONS = {
       {
         "id": 1,
         "text": "Run for it.",
-        "target": "97"
+        "target": "97",
+        "conditions": {
+          "var": "luck",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 2,
         "text": "Run for it.",
-        "target": "126"
+        "target": "126",
+        "conditions": {
+          "var": "luck",
+          "op": "==",
+          "value": 0
+        }
       }
     ],
     "state_changes": [
@@ -3436,7 +3446,12 @@ const SECTIONS = {
       {
         "id": 1,
         "text": "You have no defence.",
-        "target": "126b"
+        "target": "126b",
+        "conditions": {
+          "var": "black_jewel",
+          "op": "==",
+          "value": 0
+        }
       }
     ]
   },
@@ -8538,12 +8553,22 @@ const SECTIONS = {
       {
         "id": 1,
         "text": "Flee while you have the chance.",
-        "target": "97"
+        "target": "97",
+        "conditions": {
+          "var": "luck",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 2,
         "text": "Flee while you have the chance.",
-        "target": "126"
+        "target": "126",
+        "conditions": {
+          "var": "luck",
+          "op": "==",
+          "value": 0
+        }
       }
     ]
   },
