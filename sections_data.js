@@ -12660,12 +12660,22 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Don't let them see you.",
-        "target": "484"
+        "target": "484",
+        "conditions": {
+          "var": "roguery",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
         "text": "Don't let them see you.",
-        "target": "150"
+        "target": "150",
+        "conditions": {
+          "var": "roguery",
+          "op": "==",
+          "value": 0
+        }
       }
     ]
   },
