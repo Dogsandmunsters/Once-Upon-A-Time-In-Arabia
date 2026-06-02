@@ -10634,12 +10634,40 @@ const SECTIONS = {
       {
         "id": 1,
         "text": "Leap out to face the Lord of the Desert.",
-        "target": "13"
+        "target": "13",
+        "conditions": {
+          "or": [
+            {
+              "var": "sword",
+              "op": ">",
+              "value": 0
+            },
+            {
+              "var": "jewelled_sword",
+              "op": ">",
+              "value": 0
+            }
+          ]
+        }
       },
       {
         "id": 2,
         "text": "Leap out to face the Lord of the Desert.",
-        "target": "331"
+        "target": "331",
+        "conditions": {
+          "and": [
+            {
+              "var": "sword",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "jewelled_sword",
+              "op": "==",
+              "value": 0
+            }
+          ]
+        }
       }
     ]
   },
