@@ -4090,12 +4090,22 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Look for a way out.",
-        "target": "111"
+        "target": "111",
+        "conditions": {
+          "var": "noose",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
         "text": "Look for a way out.",
-        "target": "134"
+        "target": "134",
+        "conditions": {
+          "var": "noose",
+          "op": "==",
+          "value": 0
+        }
       }
     ]
   },
