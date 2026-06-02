@@ -2392,12 +2392,22 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "You'll be sleeping rough tonight.",
-        "target": "35"
+        "target": "35",
+        "conditions": {
+          "var": "cloak",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
         "text": "You'll be sleeping rough tonight.",
-        "target": "260"
+        "target": "260",
+        "conditions": {
+          "var": "cloak",
+          "op": "==",
+          "value": 0
+        }
       }
     ]
   },
