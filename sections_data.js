@@ -2977,12 +2977,22 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Wait to hear your owner's orders.",
-        "target": "493"
+        "target": "493",
+        "conditions": {
+          "var": "mordant",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
         "text": "Begin your pilgrimage.",
-        "target": "146"
+        "target": "146",
+        "conditions": {
+          "var": "mordant",
+          "op": "==",
+          "value": 0
+        }
       }
     ]
   },
@@ -3470,12 +3480,22 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "There are some benefits to being a slave.",
-        "target": "191"
+        "target": "191",
+        "conditions": {
+          "var": "mordant",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
         "text": "Hakim wants a volunteer.",
-        "target": "214"
+        "target": "214",
+        "conditions": {
+          "var": "mordant",
+          "op": "==",
+          "value": 0
+        }
       }
     ]
   },
@@ -5822,12 +5842,22 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "No one cares what a slave thinks.",
-        "target": "286"
+        "target": "286",
+        "conditions": {
+          "var": "mordant",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
         "text": "What now?",
-        "target": "195"
+        "target": "195",
+        "conditions": {
+          "var": "mordant",
+          "op": "==",
+          "value": 0
+        }
       }
     ]
   },
@@ -7128,12 +7158,22 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "'A lavish sum for a slave.'",
-        "target": "67"
+        "target": "67",
+        "conditions": {
+          "var": "mordant",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
         "text": "'Let's get moving.'",
-        "target": "218"
+        "target": "218",
+        "conditions": {
+          "var": "mordant",
+          "op": "==",
+          "value": 0
+        }
       }
     ],
     "state_changes": [
@@ -7732,12 +7772,22 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Hakim won't need his slave any more.",
-        "target": "192"
+        "target": "192",
+        "conditions": {
+          "var": "mordant",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
         "text": "You made it.",
-        "target": "284"
+        "target": "284",
+        "conditions": {
+          "var": "mordant",
+          "op": "==",
+          "value": 0
+        }
       }
     ]
   },
