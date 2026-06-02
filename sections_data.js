@@ -4581,12 +4581,22 @@ const SECTIONS = {
       {
         "id": 1,
         "text": "Continue with the rescue attempt.",
-        "target": "190"
+        "target": "190",
+        "conditions": {
+          "var": "roguery",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 2,
         "text": "Continue with the rescue attempt.",
-        "target": "213"
+        "target": "213",
+        "conditions": {
+          "var": "roguery",
+          "op": "==",
+          "value": 0
+        }
       }
     ]
   },
@@ -7562,15 +7572,48 @@ const SECTIONS = {
         "text": "Trust to luck.",
         "target": "157",
         "conditions": {
-          "var": "luck",
-          "op": ">",
-          "value": 0
+          "and": [
+            {
+              "var": "magic_slippers",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "indian_rope",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "luck",
+              "op": ">",
+              "value": 0
+            }
+          ]
         }
       },
       {
         "id": 3,
         "text": "There's nothing to be done.",
-        "target": "294a"
+        "target": "294a",
+        "conditions": {
+          "and": [
+            {
+              "var": "magic_slippers",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "indian_rope",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "luck",
+              "op": "==",
+              "value": 0
+            }
+          ]
+        }
       }
     ]
   },
