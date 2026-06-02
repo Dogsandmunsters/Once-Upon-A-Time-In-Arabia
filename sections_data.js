@@ -551,12 +551,22 @@ const SECTIONS = {
       {
         "id": 1,
         "text": "Run for your life.",
-        "target": "30"
+        "target": "30",
+        "conditions": {
+          "var": "archery",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 2,
         "text": "Run for your life.",
-        "target": "30a"
+        "target": "30a",
+        "conditions": {
+          "var": "archery",
+          "op": "==",
+          "value": 0
+        }
       }
     ]
   },
@@ -1397,12 +1407,22 @@ const SECTIONS = {
       {
         "id": 1,
         "text": "Run for it.",
-        "target": "97"
+        "target": "97",
+        "conditions": {
+          "var": "luck",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 2,
         "text": "Run for it.",
-        "target": "126"
+        "target": "126",
+        "conditions": {
+          "var": "luck",
+          "op": "==",
+          "value": 0
+        }
       }
     ],
     "state_changes": [
@@ -2169,9 +2189,18 @@ const SECTIONS = {
         "text": "Use your archery skill.",
         "target": "230",
         "conditions": {
-          "var": "archery",
-          "op": ">",
-          "value": 0
+          "and": [
+            {
+              "var": "archery",
+              "op": ">",
+              "value": 0
+            },
+            {
+              "var": "bow",
+              "op": ">",
+              "value": 0
+            }
+          ]
         }
       },
       {
@@ -3417,7 +3446,12 @@ const SECTIONS = {
       {
         "id": 1,
         "text": "You have no defence.",
-        "target": "126b"
+        "target": "126b",
+        "conditions": {
+          "var": "black_jewel",
+          "op": "==",
+          "value": 0
+        }
       }
     ]
   },
@@ -3901,9 +3935,18 @@ const SECTIONS = {
         "text": "Deflect the curse with magic of your own.",
         "target": "324",
         "conditions": {
-          "var": "magic",
-          "op": ">",
-          "value": 0
+          "and": [
+            {
+              "var": "magic",
+              "op": ">",
+              "value": 0
+            },
+            {
+              "var": "ring",
+              "op": ">",
+              "value": 0
+            }
+          ]
         }
       },
       {
@@ -3971,12 +4014,22 @@ const SECTIONS = {
       {
         "id": 1,
         "text": "Fight for your life.",
-        "target": "370"
+        "target": "370",
+        "conditions": {
+          "var": "folklore",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 2,
         "text": "Fight for your life.",
-        "target": "305"
+        "target": "305",
+        "conditions": {
+          "var": "folklore",
+          "op": "==",
+          "value": 0
+        }
       }
     ]
   },
@@ -4052,12 +4105,22 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Look for a way out.",
-        "target": "111"
+        "target": "111",
+        "conditions": {
+          "var": "noose",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
         "text": "Look for a way out.",
-        "target": "134"
+        "target": "134",
+        "conditions": {
+          "var": "noose",
+          "op": "==",
+          "value": 0
+        }
       }
     ]
   },
@@ -5323,12 +5386,22 @@ const SECTIONS = {
       {
         "id": 2,
         "text": "Tackle both at once.",
-        "target": "282"
+        "target": "282",
+        "conditions": {
+          "var": "agility",
+          "op": "==",
+          "value": 0
+        }
       },
       {
         "id": 3,
         "text": "Tackle both at once.",
-        "target": "369"
+        "target": "369",
+        "conditions": {
+          "var": "agility",
+          "op": ">",
+          "value": 0
+        }
       }
     ]
   },
@@ -6493,9 +6566,18 @@ const SECTIONS = {
         "text": "Deflect it with magic of your own.",
         "target": "324",
         "conditions": {
-          "var": "magic",
-          "op": ">",
-          "value": 0
+          "and": [
+            {
+              "var": "magic",
+              "op": ">",
+              "value": 0
+            },
+            {
+              "var": "ring",
+              "op": ">",
+              "value": 0
+            }
+          ]
         }
       },
       {
@@ -7614,17 +7696,50 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Can you fight on?",
-        "target": "2b"
+        "target": "2b",
+        "conditions": {
+          "var": "life_points",
+          "op": "<=",
+          "value": 0
+        }
       },
       {
         "id": 1,
         "text": "Can you fight on?",
-        "target": "282"
+        "target": "282",
+        "conditions": {
+          "and": [
+            {
+              "var": "life_points",
+              "op": ">",
+              "value": 0
+            },
+            {
+              "var": "agility",
+              "op": "==",
+              "value": 0
+            }
+          ]
+        }
       },
       {
         "id": 2,
         "text": "Can you fight on?",
-        "target": "369"
+        "target": "369",
+        "conditions": {
+          "and": [
+            {
+              "var": "life_points",
+              "op": ">",
+              "value": 0
+            },
+            {
+              "var": "agility",
+              "op": ">",
+              "value": 0
+            }
+          ]
+        }
       }
     ],
     "state_changes": [
@@ -8438,12 +8553,22 @@ const SECTIONS = {
       {
         "id": 1,
         "text": "Flee while you have the chance.",
-        "target": "97"
+        "target": "97",
+        "conditions": {
+          "var": "luck",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 2,
         "text": "Flee while you have the chance.",
-        "target": "126"
+        "target": "126",
+        "conditions": {
+          "var": "luck",
+          "op": "==",
+          "value": 0
+        }
       }
     ]
   },
@@ -8598,32 +8723,136 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "You know how to deal with them.",
-        "target": "10"
+        "target": "10",
+        "conditions": {
+          "var": "conch",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
         "text": "You know how to deal with them.",
-        "target": "56"
+        "target": "56",
+        "conditions": {
+          "and": [
+            {
+              "var": "conch",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "folklore",
+              "op": ">",
+              "value": 0
+            }
+          ]
+        }
       },
       {
         "id": 2,
         "text": "It's your brain versus their brawn.",
-        "target": "469"
+        "target": "469",
+        "conditions": {
+          "and": [
+            {
+              "var": "conch",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "cunning",
+              "op": ">",
+              "value": 0
+            }
+          ]
+        }
       },
       {
         "id": 3,
         "text": "You can easily outrun them.",
-        "target": "102"
+        "target": "102",
+        "conditions": {
+          "and": [
+            {
+              "var": "conch",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "agility",
+              "op": ">",
+              "value": 0
+            }
+          ]
+        }
       },
       {
         "id": 4,
         "text": "They're too stupid to live.",
-        "target": "124"
+        "target": "124",
+        "conditions": {
+          "and": [
+            {
+              "var": "conch",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "archery",
+              "op": ">",
+              "value": 0
+            },
+            {
+              "var": "bow",
+              "op": ">",
+              "value": 0
+            }
+          ]
+        }
       },
       {
         "id": 5,
         "text": "This won't be easy.",
-        "target": "147"
+        "target": "147",
+        "conditions": {
+          "and": [
+            {
+              "var": "conch",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "folklore",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "cunning",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "agility",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "or": [
+                {
+                  "var": "archery",
+                  "op": "==",
+                  "value": 0
+                },
+                {
+                  "var": "bow",
+                  "op": "==",
+                  "value": 0
+                }
+              ]
+            }
+          ]
+        }
       }
     ]
   },
@@ -8729,12 +8958,40 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Fight.",
-        "target": "241"
+        "target": "241",
+        "conditions": {
+          "and": [
+            {
+              "var": "archery",
+              "op": ">",
+              "value": 0
+            },
+            {
+              "var": "bow",
+              "op": ">",
+              "value": 0
+            }
+          ]
+        }
       },
       {
         "id": 1,
         "text": "Fight.",
-        "target": "264"
+        "target": "264",
+        "conditions": {
+          "or": [
+            {
+              "var": "archery",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "bow",
+              "op": "==",
+              "value": 0
+            }
+          ]
+        }
       }
     ]
   },
@@ -9951,7 +10208,12 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Dodge.",
-        "target": "70"
+        "target": "70",
+        "conditions": {
+          "var": "agility",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
@@ -9976,7 +10238,12 @@ const SECTIONS = {
       {
         "id": 3,
         "text": "Dodge.",
-        "target": "161"
+        "target": "161",
+        "conditions": {
+          "var": "agility",
+          "op": "==",
+          "value": 0
+        }
       }
     ]
   },
@@ -10328,12 +10595,22 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Fight.",
-        "target": "370"
+        "target": "370",
+        "conditions": {
+          "var": "folklore",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
         "text": "Fight.",
-        "target": "305"
+        "target": "305",
+        "conditions": {
+          "var": "folklore",
+          "op": "==",
+          "value": 0
+        }
       },
       {
         "id": 2,
@@ -12408,12 +12685,22 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Don't let them see you.",
-        "target": "484"
+        "target": "484",
+        "conditions": {
+          "var": "roguery",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
         "text": "Don't let them see you.",
-        "target": "150"
+        "target": "150",
+        "conditions": {
+          "var": "roguery",
+          "op": "==",
+          "value": 0
+        }
       }
     ]
   },
