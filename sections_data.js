@@ -3989,12 +3989,22 @@ const SECTIONS = {
       {
         "id": 1,
         "text": "Fight for your life.",
-        "target": "370"
+        "target": "370",
+        "conditions": {
+          "var": "folklore",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 2,
         "text": "Fight for your life.",
-        "target": "305"
+        "target": "305",
+        "conditions": {
+          "var": "folklore",
+          "op": "==",
+          "value": 0
+        }
       }
     ]
   },
@@ -10436,12 +10446,22 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Fight.",
-        "target": "370"
+        "target": "370",
+        "conditions": {
+          "var": "folklore",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
         "text": "Fight.",
-        "target": "305"
+        "target": "305",
+        "conditions": {
+          "var": "folklore",
+          "op": "==",
+          "value": 0
+        }
       },
       {
         "id": 2,
