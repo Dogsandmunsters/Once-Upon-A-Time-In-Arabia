@@ -443,12 +443,22 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Can you survive?",
-        "target": "5a"
+        "target": "5a",
+        "conditions": {
+          "var": "life_points",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
         "text": "Can you survive?",
-        "target": "2b"
+        "target": "2b",
+        "conditions": {
+          "var": "life_points",
+          "op": "<=",
+          "value": 0
+        }
       }
     ],
     "state_changes": [
@@ -503,12 +513,22 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Can you survive?",
-        "target": "7a"
+        "target": "7a",
+        "conditions": {
+          "var": "life_points",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
         "text": "Can you survive?",
-        "target": "2b"
+        "target": "2b",
+        "conditions": {
+          "var": "life_points",
+          "op": "<=",
+          "value": 0
+        }
       }
     ],
     "state_changes": [
@@ -547,12 +567,22 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Can you prevail?",
-        "target": "8a"
+        "target": "8a",
+        "conditions": {
+          "var": "life_points",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
         "text": "Can you prevail?",
-        "target": "2b"
+        "target": "2b",
+        "conditions": {
+          "var": "life_points",
+          "op": "<=",
+          "value": 0
+        }
       }
     ],
     "state_changes": [
@@ -728,12 +758,22 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Can you go on?",
-        "target": "15a"
+        "target": "15a",
+        "conditions": {
+          "var": "life_points",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
         "text": "Can you go on?",
-        "target": "223b"
+        "target": "223b",
+        "conditions": {
+          "var": "life_points",
+          "op": "<=",
+          "value": 0
+        }
       }
     ],
     "state_changes": [
@@ -969,12 +1009,22 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Can you fight on?",
-        "target": "24a"
+        "target": "24a",
+        "conditions": {
+          "var": "life_points",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
         "text": "Can you fight on?",
-        "target": "2b"
+        "target": "2b",
+        "conditions": {
+          "var": "life_points",
+          "op": "<=",
+          "value": 0
+        }
       }
     ]
   },
@@ -1648,12 +1698,22 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Can you survive?",
-        "target": "53a"
+        "target": "53a",
+        "conditions": {
+          "var": "life_points",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
         "text": "Can you survive?",
-        "target": "2b"
+        "target": "2b",
+        "conditions": {
+          "var": "life_points",
+          "op": "<=",
+          "value": 0
+        }
       }
     ],
     "state_changes": [
@@ -2332,12 +2392,22 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "You'll be sleeping rough tonight.",
-        "target": "35"
+        "target": "35",
+        "conditions": {
+          "var": "cloak",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
         "text": "You'll be sleeping rough tonight.",
-        "target": "260"
+        "target": "260",
+        "conditions": {
+          "var": "cloak",
+          "op": "==",
+          "value": 0
+        }
       }
     ]
   },
@@ -2364,12 +2434,22 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Can you go on?",
-        "target": "223b"
+        "target": "223b",
+        "conditions": {
+          "var": "life_points",
+          "op": "<=",
+          "value": 0
+        }
       },
       {
         "id": 1,
         "text": "Can you go on?",
-        "target": "82a"
+        "target": "82a",
+        "conditions": {
+          "var": "life_points",
+          "op": ">",
+          "value": 0
+        }
       }
     ],
     "state_changes": [
@@ -2852,12 +2932,22 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Can you go on?",
-        "target": "223b"
+        "target": "223b",
+        "conditions": {
+          "var": "life_points",
+          "op": "<=",
+          "value": 0
+        }
       },
       {
         "id": 1,
         "text": "Can you go on?",
-        "target": "105a"
+        "target": "105a",
+        "conditions": {
+          "var": "life_points",
+          "op": ">",
+          "value": 0
+        }
       }
     ],
     "state_changes": [
@@ -3765,12 +3855,22 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Can you survive?",
-        "target": "280"
+        "target": "280",
+        "conditions": {
+          "var": "life_points",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
         "text": "Can you survive?",
-        "target": "144a"
+        "target": "144a",
+        "conditions": {
+          "var": "life_points",
+          "op": "<=",
+          "value": 0
+        }
       }
     ],
     "state_changes": [
@@ -3887,12 +3987,22 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Can you fight on?",
-        "target": "2b"
+        "target": "2b",
+        "conditions": {
+          "var": "life_points",
+          "op": "<=",
+          "value": 0
+        }
       },
       {
         "id": 1,
         "text": "Can you fight on?",
-        "target": "148a"
+        "target": "148a",
+        "conditions": {
+          "var": "life_points",
+          "op": ">",
+          "value": 0
+        }
       }
     ],
     "state_changes": [
@@ -4338,12 +4448,22 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Can you go on?",
-        "target": "2b"
+        "target": "2b",
+        "conditions": {
+          "var": "life_points",
+          "op": "<=",
+          "value": 0
+        }
       },
       {
         "id": 1,
         "text": "Can you go on?",
-        "target": "171a"
+        "target": "171a",
+        "conditions": {
+          "var": "life_points",
+          "op": ">",
+          "value": 0
+        }
       }
     ],
     "state_changes": [
@@ -4372,12 +4492,22 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Can you survive?",
-        "target": "172a"
+        "target": "172a",
+        "conditions": {
+          "var": "life_points",
+          "op": "<=",
+          "value": 0
+        }
       },
       {
         "id": 1,
         "text": "Can you survive?",
-        "target": "280"
+        "target": "280",
+        "conditions": {
+          "var": "life_points",
+          "op": ">",
+          "value": 0
+        }
       }
     ],
     "state_changes": [
@@ -5246,12 +5376,22 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Can you fight on?",
-        "target": "2b"
+        "target": "2b",
+        "conditions": {
+          "var": "life_points",
+          "op": "<=",
+          "value": 0
+        }
       },
       {
         "id": 1,
         "text": "Can you fight on?",
-        "target": "216a"
+        "target": "216a",
+        "conditions": {
+          "var": "life_points",
+          "op": ">",
+          "value": 0
+        }
       }
     ],
     "state_changes": [
@@ -5416,12 +5556,22 @@ const SECTIONS = {
       {
         "id": 1,
         "text": "Can you survive?",
-        "target": "223a"
+        "target": "223a",
+        "conditions": {
+          "var": "life_points",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 2,
         "text": "Can you survive?",
-        "target": "223b"
+        "target": "223b",
+        "conditions": {
+          "var": "life_points",
+          "op": "<=",
+          "value": 0
+        }
       }
     ],
     "state_changes": [
@@ -5687,12 +5837,22 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Can you survive?",
-        "target": "2b"
+        "target": "2b",
+        "conditions": {
+          "var": "life_points",
+          "op": "<=",
+          "value": 0
+        }
       },
       {
         "id": 1,
         "text": "Can you survive?",
-        "target": "237a"
+        "target": "237a",
+        "conditions": {
+          "var": "life_points",
+          "op": ">",
+          "value": 0
+        }
       }
     ],
     "state_changes": [
@@ -5770,12 +5930,22 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Can you go on?",
-        "target": "223b"
+        "target": "223b",
+        "conditions": {
+          "var": "life_points",
+          "op": "<=",
+          "value": 0
+        }
       },
       {
         "id": 1,
         "text": "Can you go on?",
-        "target": "240a"
+        "target": "240a",
+        "conditions": {
+          "var": "life_points",
+          "op": ">",
+          "value": 0
+        }
       }
     ],
     "state_changes": [
@@ -5910,12 +6080,22 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Can you prevail?",
-        "target": "245a"
+        "target": "245a",
+        "conditions": {
+          "var": "life_points",
+          "op": "<=",
+          "value": 0
+        }
       },
       {
         "id": 1,
         "text": "Can you prevail?",
-        "target": "245b"
+        "target": "245b",
+        "conditions": {
+          "var": "life_points",
+          "op": ">",
+          "value": 0
+        }
       }
     ],
     "state_changes": [
@@ -5976,12 +6156,22 @@ const SECTIONS = {
       {
         "id": 1,
         "text": "Can you survive?",
-        "target": "223a"
+        "target": "223a",
+        "conditions": {
+          "var": "life_points",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 2,
         "text": "Can you survive?",
-        "target": "223b"
+        "target": "223b",
+        "conditions": {
+          "var": "life_points",
+          "op": "<=",
+          "value": 0
+        }
       }
     ],
     "state_changes": [
@@ -7721,12 +7911,22 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Can you go on?",
-        "target": "2b"
+        "target": "2b",
+        "conditions": {
+          "var": "life_points",
+          "op": "<=",
+          "value": 0
+        }
       },
       {
         "id": 1,
         "text": "Can you go on?",
-        "target": "315a"
+        "target": "315a",
+        "conditions": {
+          "var": "life_points",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 2,
@@ -8434,12 +8634,22 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Can you go on?",
-        "target": "223b"
+        "target": "223b",
+        "conditions": {
+          "var": "life_points",
+          "op": "<=",
+          "value": 0
+        }
       },
       {
         "id": 1,
         "text": "Can you go on?",
-        "target": "349a"
+        "target": "349a",
+        "conditions": {
+          "var": "life_points",
+          "op": ">",
+          "value": 0
+        }
       }
     ],
     "state_changes": [
@@ -8710,12 +8920,22 @@ const SECTIONS = {
       {
         "id": 1,
         "text": "Can you survive?",
-        "target": "223a"
+        "target": "223a",
+        "conditions": {
+          "var": "life_points",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 2,
         "text": "Can you survive?",
-        "target": "223b"
+        "target": "223b",
+        "conditions": {
+          "var": "life_points",
+          "op": "<=",
+          "value": 0
+        }
       }
     ],
     "state_changes": [
@@ -9030,12 +9250,22 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Can you go on?",
-        "target": "223b"
+        "target": "223b",
+        "conditions": {
+          "var": "life_points",
+          "op": "<=",
+          "value": 0
+        }
       },
       {
         "id": 1,
         "text": "Can you go on?",
-        "target": "376a"
+        "target": "376a",
+        "conditions": {
+          "var": "life_points",
+          "op": ">",
+          "value": 0
+        }
       }
     ],
     "state_changes": [
@@ -9326,12 +9556,22 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Can you survive such a fall?",
-        "target": "2b"
+        "target": "2b",
+        "conditions": {
+          "var": "life_points",
+          "op": "<=",
+          "value": 0
+        }
       },
       {
         "id": 1,
         "text": "Can you survive such a fall?",
-        "target": "280"
+        "target": "280",
+        "conditions": {
+          "var": "life_points",
+          "op": ">",
+          "value": 0
+        }
       }
     ],
     "state_changes": [
@@ -9667,12 +9907,22 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Can you survive?",
-        "target": "280"
+        "target": "280",
+        "conditions": {
+          "var": "life_points",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
         "text": "Can you survive?",
-        "target": "144a"
+        "target": "144a",
+        "conditions": {
+          "var": "life_points",
+          "op": "<=",
+          "value": 0
+        }
       }
     ],
     "state_changes": [
@@ -10297,12 +10547,22 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Are you able to go on?",
-        "target": "438a"
+        "target": "438a",
+        "conditions": {
+          "var": "life_points",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
         "text": "Are you able to go on?",
-        "target": "223b"
+        "target": "223b",
+        "conditions": {
+          "var": "life_points",
+          "op": "<=",
+          "value": 0
+        }
       }
     ],
     "state_changes": [
@@ -10519,6 +10779,25 @@ const SECTIONS = {
     "options": [
       {
         "id": 1,
+        "text": "AGILITY (add)",
+        "target": "445h",
+        "conditions": {
+          "and": [
+            {
+              "var": "agility",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "skill_count",
+              "op": "<",
+              "value": 4
+            }
+          ]
+        }
+      },
+      {
+        "id": 2,
         "text": "AGILITY (remove)",
         "target": "445hr",
         "conditions": {
@@ -10528,7 +10807,26 @@ const SECTIONS = {
         }
       },
       {
-        "id": 2,
+        "id": 3,
+        "text": "ARCHERY (add)",
+        "target": "445i",
+        "conditions": {
+          "and": [
+            {
+              "var": "archery",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "skill_count",
+              "op": "<",
+              "value": 4
+            }
+          ]
+        }
+      },
+      {
+        "id": 4,
         "text": "ARCHERY (remove)",
         "target": "445ir",
         "conditions": {
@@ -10538,7 +10836,26 @@ const SECTIONS = {
         }
       },
       {
-        "id": 3,
+        "id": 5,
+        "text": "CUNNING (add)",
+        "target": "445j",
+        "conditions": {
+          "and": [
+            {
+              "var": "cunning",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "skill_count",
+              "op": "<",
+              "value": 4
+            }
+          ]
+        }
+      },
+      {
+        "id": 6,
         "text": "CUNNING (remove)",
         "target": "445jr",
         "conditions": {
@@ -10548,7 +10865,26 @@ const SECTIONS = {
         }
       },
       {
-        "id": 4,
+        "id": 7,
+        "text": "FOLKLORE (add)",
+        "target": "445k",
+        "conditions": {
+          "and": [
+            {
+              "var": "folklore",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "skill_count",
+              "op": "<",
+              "value": 4
+            }
+          ]
+        }
+      },
+      {
+        "id": 8,
         "text": "FOLKLORE (remove)",
         "target": "445kr",
         "conditions": {
@@ -10558,7 +10894,26 @@ const SECTIONS = {
         }
       },
       {
-        "id": 5,
+        "id": 9,
+        "text": "LUCK (add)",
+        "target": "445l",
+        "conditions": {
+          "and": [
+            {
+              "var": "luck",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "skill_count",
+              "op": "<",
+              "value": 4
+            }
+          ]
+        }
+      },
+      {
+        "id": 10,
         "text": "LUCK (remove)",
         "target": "445lr",
         "conditions": {
@@ -10568,7 +10923,26 @@ const SECTIONS = {
         }
       },
       {
-        "id": 6,
+        "id": 11,
+        "text": "MAGIC (add)",
+        "target": "445m",
+        "conditions": {
+          "and": [
+            {
+              "var": "magic",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "skill_count",
+              "op": "<",
+              "value": 4
+            }
+          ]
+        }
+      },
+      {
+        "id": 12,
         "text": "MAGIC (remove)",
         "target": "445mr",
         "conditions": {
@@ -10578,7 +10952,26 @@ const SECTIONS = {
         }
       },
       {
-        "id": 7,
+        "id": 13,
+        "text": "ROGUERY (add)",
+        "target": "445n",
+        "conditions": {
+          "and": [
+            {
+              "var": "roguery",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "skill_count",
+              "op": "<",
+              "value": 4
+            }
+          ]
+        }
+      },
+      {
+        "id": 14,
         "text": "ROGUERY (remove)",
         "target": "445nr",
         "conditions": {
@@ -10588,7 +10981,26 @@ const SECTIONS = {
         }
       },
       {
-        "id": 8,
+        "id": 15,
+        "text": "SEAFARING (add)",
+        "target": "445o",
+        "conditions": {
+          "and": [
+            {
+              "var": "seafaring",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "skill_count",
+              "op": "<",
+              "value": 4
+            }
+          ]
+        }
+      },
+      {
+        "id": 16,
         "text": "SEAFARING (remove)",
         "target": "445or",
         "conditions": {
@@ -10598,7 +11010,26 @@ const SECTIONS = {
         }
       },
       {
-        "id": 9,
+        "id": 17,
+        "text": "STREETWISE (add)",
+        "target": "445p",
+        "conditions": {
+          "and": [
+            {
+              "var": "streetwise",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "skill_count",
+              "op": "<",
+              "value": 4
+            }
+          ]
+        }
+      },
+      {
+        "id": 18,
         "text": "STREETWISE (remove)",
         "target": "445pr",
         "conditions": {
@@ -10608,7 +11039,26 @@ const SECTIONS = {
         }
       },
       {
-        "id": 10,
+        "id": 19,
+        "text": "SWORDPLAY (add)",
+        "target": "445q",
+        "conditions": {
+          "and": [
+            {
+              "var": "swordplay",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "skill_count",
+              "op": "<",
+              "value": 4
+            }
+          ]
+        }
+      },
+      {
+        "id": 20,
         "text": "SWORDPLAY (remove)",
         "target": "445qr",
         "conditions": {
@@ -10618,7 +11068,26 @@ const SECTIONS = {
         }
       },
       {
-        "id": 11,
+        "id": 21,
+        "text": "WILDERNESS LORE (add)",
+        "target": "445r",
+        "conditions": {
+          "and": [
+            {
+              "var": "wilderness_lore",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "skill_count",
+              "op": "<",
+              "value": 4
+            }
+          ]
+        }
+      },
+      {
+        "id": 22,
         "text": "WILDERNESS LORE (remove)",
         "target": "445rr",
         "conditions": {
@@ -10628,8 +11097,27 @@ const SECTIONS = {
         }
       },
       {
-        "id": 12,
-        "text": "WRESTLING. (remove)",
+        "id": 23,
+        "text": "WRESTLING (add)",
+        "target": "445s",
+        "conditions": {
+          "and": [
+            {
+              "var": "wrestling",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "skill_count",
+              "op": "<",
+              "value": 4
+            }
+          ]
+        }
+      },
+      {
+        "id": 24,
+        "text": "WRESTLING (remove)",
         "target": "445sr",
         "conditions": {
           "var": "wrestling",
@@ -10638,12 +11126,17 @@ const SECTIONS = {
         }
       },
       {
-        "id": 13,
+        "id": 25,
         "text": "You're ready.",
-        "target": "1i"
+        "target": "1i",
+        "conditions": {
+          "var": "skill_count",
+          "op": ">=",
+          "value": 4
+        }
       },
       {
-        "id": 38,
+        "id": 26,
         "text": "Go back and choose one of the characters provided.",
         "target": "1"
       }
@@ -10989,11 +11482,6 @@ const SECTIONS = {
         "var": "agility",
         "op": "set",
         "value": 1
-      },
-      {
-        "var": "skill_count",
-        "op": "add",
-        "value": 1
       }
     ],
     "auto_redirect": "445"
@@ -11006,11 +11494,6 @@ const SECTIONS = {
       {
         "var": "archery",
         "op": "set",
-        "value": 1
-      },
-      {
-        "var": "skill_count",
-        "op": "add",
         "value": 1
       }
     ],
@@ -11025,11 +11508,6 @@ const SECTIONS = {
         "var": "cunning",
         "op": "set",
         "value": 1
-      },
-      {
-        "var": "skill_count",
-        "op": "add",
-        "value": 1
       }
     ],
     "auto_redirect": "445"
@@ -11042,11 +11520,6 @@ const SECTIONS = {
       {
         "var": "folklore",
         "op": "set",
-        "value": 1
-      },
-      {
-        "var": "skill_count",
-        "op": "add",
         "value": 1
       }
     ],
@@ -11061,11 +11534,6 @@ const SECTIONS = {
         "var": "luck",
         "op": "set",
         "value": 1
-      },
-      {
-        "var": "skill_count",
-        "op": "add",
-        "value": 1
       }
     ],
     "auto_redirect": "445"
@@ -11078,11 +11546,6 @@ const SECTIONS = {
       {
         "var": "magic",
         "op": "set",
-        "value": 1
-      },
-      {
-        "var": "skill_count",
-        "op": "add",
         "value": 1
       }
     ],
@@ -11097,11 +11560,6 @@ const SECTIONS = {
         "var": "roguery",
         "op": "set",
         "value": 1
-      },
-      {
-        "var": "skill_count",
-        "op": "add",
-        "value": 1
       }
     ],
     "auto_redirect": "445"
@@ -11114,11 +11572,6 @@ const SECTIONS = {
       {
         "var": "seafaring",
         "op": "set",
-        "value": 1
-      },
-      {
-        "var": "skill_count",
-        "op": "add",
         "value": 1
       }
     ],
@@ -11133,11 +11586,6 @@ const SECTIONS = {
         "var": "streetwise",
         "op": "set",
         "value": 1
-      },
-      {
-        "var": "skill_count",
-        "op": "add",
-        "value": 1
       }
     ],
     "auto_redirect": "445"
@@ -11150,11 +11598,6 @@ const SECTIONS = {
       {
         "var": "swordplay",
         "op": "set",
-        "value": 1
-      },
-      {
-        "var": "skill_count",
-        "op": "add",
         "value": 1
       }
     ],
@@ -11169,11 +11612,6 @@ const SECTIONS = {
         "var": "wilderness_lore",
         "op": "set",
         "value": 1
-      },
-      {
-        "var": "skill_count",
-        "op": "add",
-        "value": 1
       }
     ],
     "auto_redirect": "445"
@@ -11186,11 +11624,6 @@ const SECTIONS = {
       {
         "var": "wrestling",
         "op": "set",
-        "value": 1
-      },
-      {
-        "var": "skill_count",
-        "op": "add",
         "value": 1
       }
     ],
