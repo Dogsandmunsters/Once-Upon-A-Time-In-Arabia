@@ -8729,12 +8729,40 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Fight.",
-        "target": "241"
+        "target": "241",
+        "conditions": {
+          "and": [
+            {
+              "var": "archery",
+              "op": ">",
+              "value": 0
+            },
+            {
+              "var": "bow",
+              "op": ">",
+              "value": 0
+            }
+          ]
+        }
       },
       {
         "id": 1,
         "text": "Fight.",
-        "target": "264"
+        "target": "264",
+        "conditions": {
+          "or": [
+            {
+              "var": "archery",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "bow",
+              "op": "==",
+              "value": 0
+            }
+          ]
+        }
       }
     ]
   },
