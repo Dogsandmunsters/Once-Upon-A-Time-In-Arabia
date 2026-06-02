@@ -5341,12 +5341,22 @@ const SECTIONS = {
       {
         "id": 2,
         "text": "Tackle both at once.",
-        "target": "282"
+        "target": "282",
+        "conditions": {
+          "var": "agility",
+          "op": "==",
+          "value": 0
+        }
       },
       {
         "id": 3,
         "text": "Tackle both at once.",
-        "target": "369"
+        "target": "369",
+        "conditions": {
+          "var": "agility",
+          "op": ">",
+          "value": 0
+        }
       }
     ]
   },
