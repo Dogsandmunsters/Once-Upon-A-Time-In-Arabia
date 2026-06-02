@@ -969,9 +969,9 @@
                 if (!conditions) return true;
                 
                 if (conditions.and) {
-                    return conditions.and.every(c => this.checkCondition(c));
+                    return conditions.and.every(c => this.checkConditions(c));
                 } else if (conditions.or) {
-                    return conditions.or.some(c => this.checkCondition(c));
+                    return conditions.or.some(c => this.checkConditions(c));
                 } else {
                     return this.checkCondition(conditions);
                 }

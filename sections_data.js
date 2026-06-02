@@ -8698,32 +8698,136 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "You know how to deal with them.",
-        "target": "10"
+        "target": "10",
+        "conditions": {
+          "var": "conch",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
         "text": "You know how to deal with them.",
-        "target": "56"
+        "target": "56",
+        "conditions": {
+          "and": [
+            {
+              "var": "conch",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "folklore",
+              "op": ">",
+              "value": 0
+            }
+          ]
+        }
       },
       {
         "id": 2,
         "text": "It's your brain versus their brawn.",
-        "target": "469"
+        "target": "469",
+        "conditions": {
+          "and": [
+            {
+              "var": "conch",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "cunning",
+              "op": ">",
+              "value": 0
+            }
+          ]
+        }
       },
       {
         "id": 3,
         "text": "You can easily outrun them.",
-        "target": "102"
+        "target": "102",
+        "conditions": {
+          "and": [
+            {
+              "var": "conch",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "agility",
+              "op": ">",
+              "value": 0
+            }
+          ]
+        }
       },
       {
         "id": 4,
         "text": "They're too stupid to live.",
-        "target": "124"
+        "target": "124",
+        "conditions": {
+          "and": [
+            {
+              "var": "conch",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "archery",
+              "op": ">",
+              "value": 0
+            },
+            {
+              "var": "bow",
+              "op": ">",
+              "value": 0
+            }
+          ]
+        }
       },
       {
         "id": 5,
         "text": "This won't be easy.",
-        "target": "147"
+        "target": "147",
+        "conditions": {
+          "and": [
+            {
+              "var": "conch",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "folklore",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "cunning",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "agility",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "or": [
+                {
+                  "var": "archery",
+                  "op": "==",
+                  "value": 0
+                },
+                {
+                  "var": "bow",
+                  "op": "==",
+                  "value": 0
+                }
+              ]
+            }
+          ]
+        }
       }
     ]
   },
