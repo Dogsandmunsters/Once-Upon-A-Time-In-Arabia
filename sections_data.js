@@ -3758,12 +3758,22 @@ const SECTIONS = {
       {
         "id": 4,
         "text": "Give up and go home.",
-        "target": "159"
+        "target": "159",
+        "conditions": {
+          "var": "harem",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 5,
         "text": "Give up and go home.",
-        "target": "113"
+        "target": "113",
+        "conditions": {
+          "var": "harem",
+          "op": "==",
+          "value": 0
+        }
       }
     ]
   },
@@ -5439,12 +5449,22 @@ const SECTIONS = {
       {
         "id": 4,
         "text": "Abandon the whole quest.",
-        "target": "159"
+        "target": "159",
+        "conditions": {
+          "var": "harem",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 5,
         "text": "Abandon the whole quest.",
-        "target": "113"
+        "target": "113",
+        "conditions": {
+          "var": "harem",
+          "op": "==",
+          "value": 0
+        }
       }
     ]
   },
@@ -6621,12 +6641,22 @@ const SECTIONS = {
       {
         "id": 4,
         "text": "Give up.",
-        "target": "159"
+        "target": "159",
+        "conditions": {
+          "var": "harem",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 5,
         "text": "Give up.",
-        "target": "113"
+        "target": "113",
+        "conditions": {
+          "var": "harem",
+          "op": "==",
+          "value": 0
+        }
       }
     ]
   },
@@ -10785,12 +10815,22 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Hide.",
-        "target": "31"
+        "target": "31",
+        "conditions": {
+          "var": "cunning",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
         "text": "Hide.",
-        "target": "433"
+        "target": "433",
+        "conditions": {
+          "var": "cunning",
+          "op": "==",
+          "value": 0
+        }
       },
       {
         "id": 2,
