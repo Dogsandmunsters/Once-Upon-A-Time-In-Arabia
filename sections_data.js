@@ -7651,17 +7651,50 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Can you fight on?",
-        "target": "2b"
+        "target": "2b",
+        "conditions": {
+          "var": "life_points",
+          "op": "<=",
+          "value": 0
+        }
       },
       {
         "id": 1,
         "text": "Can you fight on?",
-        "target": "282"
+        "target": "282",
+        "conditions": {
+          "and": [
+            {
+              "var": "life_points",
+              "op": ">",
+              "value": 0
+            },
+            {
+              "var": "agility",
+              "op": "==",
+              "value": 0
+            }
+          ]
+        }
       },
       {
         "id": 2,
         "text": "Can you fight on?",
-        "target": "369"
+        "target": "369",
+        "conditions": {
+          "and": [
+            {
+              "var": "life_points",
+              "op": ">",
+              "value": 0
+            },
+            {
+              "var": "agility",
+              "op": ">",
+              "value": 0
+            }
+          ]
+        }
       }
     ],
     "state_changes": [
@@ -10016,7 +10049,12 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Dodge.",
-        "target": "70"
+        "target": "70",
+        "conditions": {
+          "var": "agility",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
@@ -10041,7 +10079,12 @@ const SECTIONS = {
       {
         "id": 3,
         "text": "Dodge.",
-        "target": "161"
+        "target": "161",
+        "conditions": {
+          "var": "agility",
+          "op": "==",
+          "value": 0
+        }
       }
     ]
   },
