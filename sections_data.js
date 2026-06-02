@@ -1226,9 +1226,18 @@ const SECTIONS = {
         "text": "Use a sword.",
         "target": "391",
         "conditions": {
-          "var": "sword",
-          "op": ">",
-          "value": 0
+          "or": [
+            {
+              "var": "sword",
+              "op": ">",
+              "value": 0
+            },
+            {
+              "var": "jewelled_sword",
+              "op": ">",
+              "value": 0
+            }
+          ]
         }
       },
       {
@@ -3663,12 +3672,31 @@ const SECTIONS = {
       {
         "id": 0,
         "text": "Sneak up and hitch a ride.",
-        "target": "158"
+        "target": "158",
+        "conditions": {
+          "var": "roguery",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 1,
         "text": "Sneak up and hitch a ride.",
-        "target": "136a"
+        "target": "136a",
+        "conditions": {
+          "and": [
+            {
+              "var": "roguery",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "lamp_of_antar",
+              "op": ">",
+              "value": 0
+            }
+          ]
+        }
       },
       {
         "id": 2,
@@ -5906,9 +5934,18 @@ const SECTIONS = {
         "text": "Draw your sword.",
         "target": "304",
         "conditions": {
-          "var": "sword",
-          "op": ">",
-          "value": 0
+          "or": [
+            {
+              "var": "sword",
+              "op": ">",
+              "value": 0
+            },
+            {
+              "var": "jewelled_sword",
+              "op": ">",
+              "value": 0
+            }
+          ]
         }
       },
       {
@@ -6516,9 +6553,18 @@ const SECTIONS = {
         "text": "Draw your sword.",
         "target": "278",
         "conditions": {
-          "var": "sword",
-          "op": ">",
-          "value": 0
+          "or": [
+            {
+              "var": "sword",
+              "op": ">",
+              "value": 0
+            },
+            {
+              "var": "jewelled_sword",
+              "op": ">",
+              "value": 0
+            }
+          ]
         }
       },
       {
@@ -6621,9 +6667,18 @@ const SECTIONS = {
         "text": "Draw your sword.",
         "target": "347",
         "conditions": {
-          "var": "sword",
-          "op": ">",
-          "value": 0
+          "or": [
+            {
+              "var": "sword",
+              "op": ">",
+              "value": 0
+            },
+            {
+              "var": "jewelled_sword",
+              "op": ">",
+              "value": 0
+            }
+          ]
         }
       },
       {
@@ -7039,12 +7094,7 @@ const SECTIONS = {
       {
         "id": 1,
         "text": "Drop your sword and fight barehanded.",
-        "target": "321",
-        "conditions": {
-          "var": "sword",
-          "op": ">",
-          "value": 0
-        }
+        "target": "321"
       },
       {
         "id": 2,
@@ -7581,30 +7631,96 @@ const SECTIONS = {
         "text": "Draw your sword.",
         "target": "278",
         "conditions": {
-          "var": "sword",
-          "op": ">",
-          "value": 0
+          "and": [
+            {
+              "var": "life_points",
+              "op": ">",
+              "value": 0
+            },
+            {
+              "or": [
+                {
+                  "var": "sword",
+                  "op": ">",
+                  "value": 0
+                },
+                {
+                  "var": "jewelled_sword",
+                  "op": ">",
+                  "value": 0
+                }
+              ]
+            }
+          ]
         }
       },
       {
         "id": 1,
         "text": "Launch yourself at them.",
-        "target": "321"
+        "target": "321",
+        "conditions": {
+          "and": [
+            {
+              "var": "life_points",
+              "op": ">",
+              "value": 0
+            },
+            {
+              "var": "sword",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "jewelled_sword",
+              "op": "==",
+              "value": 0
+            }
+          ]
+        }
       },
       {
         "id": 2,
         "text": "Fight bare handed.",
-        "target": "321"
+        "target": "321",
+        "conditions": {
+          "and": [
+            {
+              "var": "life_points",
+              "op": ">",
+              "value": 0
+            },
+            {
+              "var": "sword",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "jewelled_sword",
+              "op": "==",
+              "value": 0
+            }
+          ]
+        }
       },
       {
         "id": 3,
         "text": "Make a run for it.",
-        "target": "365"
+        "target": "365",
+        "conditions": {
+          "var": "life_points",
+          "op": ">",
+          "value": 0
+        }
       },
       {
         "id": 4,
         "text": "You're done for.",
-        "target": "2b"
+        "target": "2b",
+        "conditions": {
+          "var": "life_points",
+          "op": "<=",
+          "value": 0
+        }
       }
     ],
     "state_changes": [
@@ -7812,9 +7928,18 @@ const SECTIONS = {
         "text": "Draw your sword.",
         "target": "391",
         "conditions": {
-          "var": "sword",
-          "op": ">",
-          "value": 0
+          "or": [
+            {
+              "var": "sword",
+              "op": ">",
+              "value": 0
+            },
+            {
+              "var": "jewelled_sword",
+              "op": ">",
+              "value": 0
+            }
+          ]
         }
       },
       {
@@ -7922,9 +8047,18 @@ const SECTIONS = {
         "text": "Draw your sword.",
         "target": "13",
         "conditions": {
-          "var": "sword",
-          "op": ">",
-          "value": 0
+          "or": [
+            {
+              "var": "sword",
+              "op": ">",
+              "value": 0
+            },
+            {
+              "var": "jewelled_sword",
+              "op": ">",
+              "value": 0
+            }
+          ]
         }
       },
       {
@@ -9054,9 +9188,18 @@ const SECTIONS = {
         "text": "Draw your sword.",
         "target": "13",
         "conditions": {
-          "var": "sword",
-          "op": ">",
-          "value": 0
+          "or": [
+            {
+              "var": "sword",
+              "op": ">",
+              "value": 0
+            },
+            {
+              "var": "jewelled_sword",
+              "op": ">",
+              "value": 0
+            }
+          ]
         }
       },
       {
@@ -9763,12 +9906,7 @@ const SECTIONS = {
       {
         "id": 2,
         "text": "Drop the sword and surrender.",
-        "target": "2",
-        "conditions": {
-          "var": "sword",
-          "op": ">",
-          "value": 0
-        }
+        "target": "2"
       }
     ],
     "state_changes": [
@@ -10496,12 +10634,40 @@ const SECTIONS = {
       {
         "id": 1,
         "text": "Leap out to face the Lord of the Desert.",
-        "target": "13"
+        "target": "13",
+        "conditions": {
+          "or": [
+            {
+              "var": "sword",
+              "op": ">",
+              "value": 0
+            },
+            {
+              "var": "jewelled_sword",
+              "op": ">",
+              "value": 0
+            }
+          ]
+        }
       },
       {
         "id": 2,
         "text": "Leap out to face the Lord of the Desert.",
-        "target": "331"
+        "target": "331",
+        "conditions": {
+          "and": [
+            {
+              "var": "sword",
+              "op": "==",
+              "value": 0
+            },
+            {
+              "var": "jewelled_sword",
+              "op": "==",
+              "value": 0
+            }
+          ]
+        }
       }
     ]
   },
